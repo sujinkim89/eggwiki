@@ -29,13 +29,13 @@ const StartPage = () => {
           {/* Year-end Special Badge */}
           <div className="inline-flex items-center gap-1.5 bg-gradient-to-r from-primary/20 to-secondary/20 border border-primary/30 px-3 py-1.5 rounded-full mb-3 animate-fade-up">
             <Sparkles className="w-3.5 h-3.5 text-primary" />
-            <span className="text-xs font-medium text-primary">연말특집</span>
+            <span className="text-xs font-medium text-primary">에겐 테토 논란 종결</span>
             <Sparkles className="w-3.5 h-3.5 text-primary" />
           </div>
 
           {/* Main headline */}
           <h1 className="font-display text-2xl sm:text-3xl leading-tight mb-4 animate-fade-up delay-100">
-            <span className="text-gradient-meme">에겐 테토 논란 종결</span>
+            <span className="text-gradient-meme"></span>
           </h1>
 
           {/* Chat bubbles above egg */}
@@ -57,8 +57,8 @@ const StartPage = () => {
 
           {/* Sub headline */}
           <div className="space-y-4 mb-8">
-            <h2 className="font-display text-xl sm:text-2xl text-foreground animate-fade-up delay-200">
-              내 난소는 어떤 유형일까?<br />
+            <h2 className="font-display text-xl sm:text-2xl text-foreground animate-fade-up delay-200">내 난소는 어떤 호르몬 유형일까?
+에겐? 테토?<br />
               에겐? 테토?
             </h2>
             <p className="text-muted-foreground text-base leading-relaxed animate-fade-up delay-300">
