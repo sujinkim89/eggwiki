@@ -19,7 +19,7 @@ const StartPage = () => {
         <div className="w-full max-w-md mx-auto text-center">
           {/* Egg Character */}
           <div className="mx-auto mb-6 animate-fade-up">
-            <EggCharacter size="lg" />
+            <EggCharacter size="lg" mood="worried" />
           </div>
 
           {/* Headlines */}

@@ -57,7 +57,7 @@ const ResultPage = () => {
           {/* Result Header */}
           <div className="text-center mb-6 animate-fade-up">
             <div className="flex justify-center mb-3">
-              <EggCharacter size="sm" />
+              <EggCharacter size="sm" mood="happy" />
             </div>
             <p className="text-sm text-muted-foreground mb-2">
               {nickname}님의 {gender === 'female' ? '호르몬 자아' : 'PMS 대응 유형'}는...
