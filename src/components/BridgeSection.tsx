@@ -1,9 +1,7 @@
 import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 export const BridgeSection = () => {
-  return (
-    <div className="space-y-6">
+  return <div className="space-y-6">
       {/* Section 1: Hook */}
       <div className="bg-card rounded-2xl p-5 shadow-card">
         <h3 className="font-display text-lg text-foreground mb-3">
@@ -19,53 +17,11 @@ export const BridgeSection = () => {
       </div>
 
       {/* Section 2: Why PMS gets worse */}
-      <div className="bg-card rounded-2xl p-5 shadow-card">
-        <h3 className="font-display text-lg text-foreground mb-4">
-          📉 혹시, 예전보다 PMS가 심해진 것 같다고 느끼셨나요?
-        </h3>
-        <p className="text-sm text-muted-foreground mb-4">그 느낌, 맞아요. 생리 전 우리 몸에서는 이런 일이 일어나거든요:</p>
-        
-        <div className="space-y-3 mb-4">
-          <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-xl">
-            <span className="text-xl">📉</span>
-            <div>
-              <p className="text-sm font-medium text-foreground">에스트로겐이 뚝 떨어지면</p>
-              <p className="text-xs text-muted-foreground">→ 이유 없이 우울하고, 세상이 다 귀찮아져요</p>
-            </div>
-          </div>
-          
-          <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-xl">
-            <span className="text-xl">📉</span>
-            <div>
-              <p className="text-sm font-medium text-foreground">프로게스테론이 줄어들면</p>
-              <p className="text-xs text-muted-foreground">→ 사소한 일에도 예민해지고, 불안감이 커져요</p>
-            </div>
-          </div>
-          
-          <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-xl">
-            <span className="text-xl">🧠</span>
-            <div>
-              <p className="text-sm font-medium text-foreground">뇌는 이 변화에 당황해요</p>
-              <p className="text-xs text-muted-foreground">→ "갑자기 행복 호르몬이 사라졌어...!"</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-gradient-to-br from-rose/10 to-violet/10 rounded-xl p-4 border border-rose/20">
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            건강한 난소라면 이 하강이 부드럽게 일어나요.
-            <br />하지만 <span className="text-rose font-medium">난소 기능이 떨어지면, 호르몬이 롤러코스터처럼 급변</span>하죠.
-            <br /><br />뇌가 이 불규칙한 변동을 감당하지 못하면서,
-            <br />PMS 증상이 점점 더 심해지고 예측이 어려워지는 거예요.
-          </p>
-        </div>
-      </div>
+      
 
       {/* Section 3: Warning */}
       <div className="bg-gradient-to-br from-rose/20 to-violet/20 border border-rose/30 rounded-2xl p-5">
-        <h3 className="font-display text-lg text-rose mb-4">
-          🚨 잠깐, 이건 알고 계셨나요?
-        </h3>
+        <h3 className="font-display text-lg text-rose mb-4">📉 혹시, 예전보다 PMS가 심해진 것 같다고 느끼셨나요?</h3>
         
         <div className="bg-card/80 rounded-xl p-4 mb-4">
           <p className="text-sm text-muted-foreground leading-relaxed">
@@ -80,8 +36,8 @@ export const BridgeSection = () => {
         <div className="bg-card rounded-xl p-4 text-center">
           <span className="text-3xl mb-3 block">🔬</span>
           <p className="text-base font-display text-rose mb-2">심리테스트는 시작점이에요</p>
-          <p className="text-sm text-muted-foreground">
-            내 유형을 알았다면, 이제 <strong className="text-foreground">'왜 그런지'</strong>를 
+          <p className="text-sm text-muted-foreground">내 유형을 알았다면, 이제 '왜 그런지'를
+과학적으로 확인해볼 차례예요.<strong className="text-foreground">'왜 그런지'</strong>를 
             <br />정확한 숫자로 확인해볼 차례예요.
           </p>
         </div>
@@ -89,9 +45,7 @@ export const BridgeSection = () => {
 
       {/* Section 4: Hormone Tests */}
       <div className="bg-card rounded-2xl p-5 shadow-card">
-        <h3 className="font-display text-lg text-foreground mb-2">
-          📊 여성 호르몬 3종 검사
-        </h3>
+        <h3 className="font-display text-lg text-foreground mb-2">전문의가 직접 운영하는 라보 여성 호르몬 3종 검사</h3>
         <p className="text-xs text-muted-foreground mb-4">내 몸 상태를 가장 정확하게 알 수 있는 방법이에요</p>
 
         <div className="space-y-4">
@@ -212,10 +166,7 @@ export const BridgeSection = () => {
               <span className="text-muted-foreground">결과 확인</span>
               <span className="font-medium text-foreground">3~5일 이내</span>
             </div>
-            <div className="flex justify-between">
-              <span className="text-muted-foreground">최적 시기</span>
-              <span className="font-medium text-foreground">생리 시작 2~3일째</span>
-            </div>
+            
           </div>
         </div>
       </div>
@@ -284,6 +235,5 @@ export const BridgeSection = () => {
           <br /><br /><strong className="text-rose">당신의 호르몬 건강, 지금 바로 챙기세요. 🌸</strong>
         </p>
       </div>
-    </div>
-  );
+    </div>;
 };
