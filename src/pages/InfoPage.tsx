@@ -27,7 +27,7 @@ const InfoPage = () => {
         <div className="w-full max-w-md mx-auto">
           {/* Egg Character */}
           <div className="flex justify-center mb-4 animate-fade-up">
-            <EggCharacter size="sm" />
+            <EggCharacter size="sm" mood="angry" />
           </div>
 
           {/* Warning Title */}

@@ -1,7 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuraBackground } from "@/components/AuraBackground";
-import { EggCharacter } from "@/components/EggCharacter";
+import { EggCharacter, EggMood } from "@/components/EggCharacter";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { useQuizStore } from "@/store/quizStore";
@@ -20,6 +20,15 @@ const QuizPage = () => {
 
   const question = quizQuestions[currentQuestion];
   const progress = ((currentQuestion) / quizQuestions.length) * 100;
+
+  // Dynamic egg mood based on progress
+  const eggMood: EggMood = useMemo(() => {
+    if (progress < 20) return "worried";
+    if (progress < 40) return "tired";
+    if (progress < 60) return "angry";
+    if (progress < 80) return "sad";
+    return "happy";
+  }, [progress]);
 
   const handleAnswer = (type: string) => {
     addAnswer(type);
@@ -89,7 +98,7 @@ const QuizPage = () => {
 
           {/* Nickname indicator with Egg */}
           <div className="mt-6 flex items-center justify-center gap-2 animate-fade-up delay-400">
-            <EggCharacter size="xs" animate={false} />
+            <EggCharacter size="xs" mood={eggMood} animate={false} />
             <p className="text-xs text-muted-foreground">
               <span className="font-medium text-primary">{nickname}</span>님의 호르몬 분석 중...
             </p>

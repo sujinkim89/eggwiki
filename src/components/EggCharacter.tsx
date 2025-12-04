@@ -1,9 +1,17 @@
 import { cn } from "@/lib/utils";
-import eggCharacter from "@/assets/egg-character.png";
+import eggDefault from "@/assets/egg-default.png";
+import eggHappy from "@/assets/egg-happy.png";
+import eggSad from "@/assets/egg-sad.png";
+import eggAngry from "@/assets/egg-angry.png";
+import eggWorried from "@/assets/egg-worried.png";
+import eggTired from "@/assets/egg-tired.png";
+
+export type EggMood = "default" | "happy" | "sad" | "angry" | "worried" | "tired";
 
 interface EggCharacterProps {
   className?: string;
   size?: "xs" | "sm" | "md" | "lg" | "xl";
+  mood?: EggMood;
   animate?: boolean;
 }
 
@@ -15,12 +23,35 @@ const sizeClasses = {
   xl: "w-36 h-36",
 };
 
-export const EggCharacter = ({ className, size = "md", animate = true }: EggCharacterProps) => {
+const moodImages: Record<EggMood, string> = {
+  default: eggDefault,
+  happy: eggHappy,
+  sad: eggSad,
+  angry: eggAngry,
+  worried: eggWorried,
+  tired: eggTired,
+};
+
+const moodAltTexts: Record<EggMood, string> = {
+  default: "귀여운 계란 캐릭터",
+  happy: "행복한 계란 캐릭터",
+  sad: "슬픈 계란 캐릭터",
+  angry: "화난 계란 캐릭터",
+  worried: "걱정하는 계란 캐릭터",
+  tired: "피곤한 계란 캐릭터",
+};
+
+export const EggCharacter = ({ 
+  className, 
+  size = "md", 
+  mood = "default",
+  animate = true 
+}: EggCharacterProps) => {
   return (
     <div className={cn("relative inline-flex items-center justify-center", className)}>
       <img
-        src={eggCharacter}
-        alt="귀여운 계란 캐릭터"
+        src={moodImages[mood]}
+        alt={moodAltTexts[mood]}
         className={cn(
           sizeClasses[size],
           "object-contain drop-shadow-lg",
