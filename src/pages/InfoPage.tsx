@@ -39,7 +39,7 @@ const InfoPage = () => {
               잠깐! 🚨
             </h1>
             <p className="font-display text-xl text-gradient-meme">
-              그거 네 {partner} 성격 아니야!
+              그날 예민한거 네 성격 아니야!
             </p>
           </div>
 
