@@ -23,7 +23,7 @@ const StartPage = () => {
             <div className="bg-card px-2.5 py-1.5 rounded-xl shadow-card text-xs animate-float-chat">헤어지자</div>
             <div className="bg-primary/10 px-2.5 py-1.5 rounded-xl shadow-card text-xs animate-float-chat delay-100">에그위키야</div>
             <div className="bg-card px-2.5 py-1.5 rounded-xl shadow-card text-xs animate-float-chat delay-200">PMS 땜에</div>
-            <div className="bg-primary/10 px-2.5 py-1.5 rounded-xl shadow-card text-xs animate-float-chat delay-300">못 다니겠어 😤</div>
+            <div className="bg-primary/10 px-2.5 py-1.5 rounded-xl shadow-card text-xs animate-float-chat delay-300">너랑 못 다니겠어 😤</div>
           </div>
 
           {/* Headlines */}
