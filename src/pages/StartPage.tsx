@@ -58,8 +58,8 @@ const StartPage = () => {
           {/* Sub headline */}
           <div className="space-y-4 mb-8">
             <h2 className="font-display text-xl sm:text-2xl text-foreground animate-fade-up delay-200">
-              연말연시 감정 롤러코스터,<br />
-              진짜 호르몬 분석
+              내 난소는 어떤 유형일까?<br />
+              에겐? 테토?
             </h2>
             <p className="text-muted-foreground text-base leading-relaxed animate-fade-up delay-300">
               2025년 마지막 날까지 흔드는 호르몬,<br />
