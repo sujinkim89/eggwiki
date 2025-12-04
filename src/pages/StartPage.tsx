@@ -37,11 +37,16 @@ const StartPage = () => {
 
         <div className="w-full max-w-md mx-auto text-center relative z-10">
           {/* Year-end Special Badge */}
-          <div className="inline-flex items-center gap-1.5 bg-gradient-to-r from-primary/20 to-secondary/20 border border-primary/30 px-3 py-1.5 rounded-full mb-4 animate-fade-up">
+          <div className="inline-flex items-center gap-1.5 bg-gradient-to-r from-primary/20 to-secondary/20 border border-primary/30 px-3 py-1.5 rounded-full mb-3 animate-fade-up">
             <Sparkles className="w-3.5 h-3.5 text-primary" />
             <span className="text-xs font-medium text-primary">연말특집</span>
             <Sparkles className="w-3.5 h-3.5 text-primary" />
           </div>
+
+          {/* Main headline */}
+          <h1 className="font-display text-2xl sm:text-3xl leading-tight mb-4 animate-fade-up delay-100">
+            <span className="text-gradient-meme">에겐 테토 논란 종결</span>
+          </h1>
 
           {/* Chat bubbles above egg */}
           <div className="flex flex-wrap justify-center gap-2 mb-3">
@@ -60,11 +65,8 @@ const StartPage = () => {
             <div className="bg-primary/10 px-2.5 py-1.5 rounded-xl shadow-card text-xs animate-float-chat delay-300">호르몬 탓이야 😤</div>
           </div>
 
-          {/* Headlines */}
+          {/* Sub headline */}
           <div className="space-y-4 mb-8">
-            <h1 className="font-display text-2xl sm:text-3xl leading-tight animate-fade-up delay-100">
-              <span className="text-gradient-meme">에겐 테토 논란 종결</span>
-            </h1>
             <h2 className="font-display text-xl sm:text-2xl text-foreground animate-fade-up delay-200">
               연말연시 감정 롤러코스터,<br />
               진짜 호르몬 분석
