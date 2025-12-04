@@ -5,7 +5,7 @@ import { EggCharacter, EggMood } from "@/components/EggCharacter";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { useQuizStore } from "@/store/quizStore";
-import { quizQuestions, calculateType } from "@/data/quizData";
+import { femaleQuizQuestions, maleQuizQuestions, calculateType } from "@/data/quizData";
 
 const QuizPage = () => {
   const navigate = useNavigate();
@@ -18,6 +18,7 @@ const QuizPage = () => {
     }
   }, [nickname, navigate]);
 
+  const quizQuestions = gender === 'male' ? maleQuizQuestions : femaleQuizQuestions;
   const question = quizQuestions[currentQuestion];
   const progress = ((currentQuestion) / quizQuestions.length) * 100;
 
