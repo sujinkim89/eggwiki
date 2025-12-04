@@ -51,17 +51,17 @@ export const TypeChart = ({ x, y, className }: TypeChartProps) => {
 
         {/* Position marker */}
         <div
-          className="absolute w-8 h-8 -translate-x-1/2 -translate-y-1/2 animate-scale-bounce"
+          className="absolute w-10 h-10 -translate-x-1/2 -translate-y-1/2 animate-scale-bounce z-10"
           style={{
             left: `${posX}%`,
             top: `${posY}%`,
           }}
         >
           {/* Glow effect */}
-          <div className="absolute inset-0 rounded-full bg-primary/30 blur-md" />
+          <div className="absolute inset-0 rounded-full bg-hot-pink/40 blur-lg" />
           {/* Main dot */}
-          <div className="relative w-full h-full rounded-full bg-gradient-meme shadow-glow flex items-center justify-center">
-            <span className="text-xs">📍</span>
+          <div className="relative w-full h-full rounded-full bg-gradient-meme shadow-glow flex items-center justify-center border-2 border-background">
+            <span className="text-sm">📍</span>
           </div>
         </div>
       </div>
