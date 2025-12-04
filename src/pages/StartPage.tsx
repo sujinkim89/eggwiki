@@ -57,9 +57,8 @@ const StartPage = () => {
 
           {/* Sub headline */}
           <div className="space-y-4 mb-8">
-            <h2 className="font-display text-xl sm:text-2xl text-foreground animate-fade-up delay-200">내 난소는 어떤 호르몬 유형일까?
-에겐? 테토?<br />
-              에겐? 테토?
+            <h2 className="font-display text-xl sm:text-2xl text-foreground animate-fade-up delay-200">
+              내 난소는 어떤 호르몬 유형일까?
             </h2>
             <p className="text-muted-foreground text-base leading-relaxed animate-fade-up delay-300">
               2025년 마지막 날까지 흔드는 호르몬,<br />
