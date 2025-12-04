@@ -3,18 +3,14 @@ import { AuraBackground } from "@/components/AuraBackground";
 import { EggCharacter } from "@/components/EggCharacter";
 import { Button } from "@/components/ui/button";
 import { useQuizStore } from "@/store/quizStore";
-
 const StartPage = () => {
   const navigate = useNavigate();
-  const setGender = useQuizStore((state) => state.setGender);
-
+  const setGender = useQuizStore(state => state.setGender);
   const handleStart = (gender: 'female' | 'male') => {
     setGender(gender);
     navigate('/info');
   };
-
-  return (
-    <AuraBackground>
+  return <AuraBackground>
       <div className="min-h-screen flex flex-col items-center justify-center px-4 py-8">
         <div className="w-full max-w-md mx-auto text-center">
           {/* Egg Character */}
@@ -25,11 +21,9 @@ const StartPage = () => {
           {/* Headlines */}
           <div className="space-y-4 mb-8">
             <h1 className="font-display text-2xl sm:text-3xl leading-tight animate-fade-up delay-100">
-              <span className="text-gradient-meme">내 기분이 널뛰는 건...</span>
+              <span className="text-gradient-meme">PMS로 기분이 날뛰는건</span>
             </h1>
-            <h2 className="font-display text-xl sm:text-2xl text-foreground animate-fade-up delay-200">
-              내 난소 시계가
-              <br />
+            <h2 className="font-display text-xl sm:text-2xl text-foreground animate-fade-up delay-200">내 난소가 안 멈추는 탓일까?<br />
               안 멈추는 탓일까?
             </h2>
             <p className="text-muted-foreground text-base leading-relaxed animate-fade-up delay-300">
@@ -41,33 +35,19 @@ const StartPage = () => {
 
           {/* CTA Buttons */}
           <div className="space-y-4 animate-fade-up delay-400">
-            <Button 
-              variant="female" 
-              size="xl" 
-              className="w-full"
-              onClick={() => handleStart('female')}
-            >
-              <span className="text-lg">👩</span>
+            <Button variant="female" size="xl" className="w-full" onClick={() => handleStart('female')}>👩
+여성 PMS 유형 진단<span className="text-lg">👩</span>
               <span>여성 PMS 유형 진단</span>
             </Button>
             
-            <p className="text-xs text-muted-foreground">
-              내 호르몬 패턴 팩폭 받기
-            </p>
+            <p className="text-xs text-muted-foreground">내 호르몬 패턴 팩폭 받기</p>
 
-            <Button 
-              variant="male" 
-              size="xl" 
-              className="w-full"
-              onClick={() => handleStart('male')}
-            >
+            <Button variant="male" size="xl" className="w-full" onClick={() => handleStart('male')}>
               <span className="text-lg">👨</span>
               <span>남성 PMS 대응 유형</span>
             </Button>
             
-            <p className="text-xs text-muted-foreground">
-              여친의 발작 버튼 위치 분석
-            </p>
+            <p className="text-xs text-muted-foreground">여친의 발작 버튼 위치 분석</p>
           </div>
 
           {/* Floating chat bubbles decoration */}
@@ -81,8 +61,6 @@ const StartPage = () => {
           </div>
         </div>
       </div>
-    </AuraBackground>
-  );
+    </AuraBackground>;
 };
-
 export default StartPage;
