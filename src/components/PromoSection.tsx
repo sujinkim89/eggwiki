@@ -21,6 +21,9 @@ export const PromoSection = ({ onShare, onRestart }: PromoSectionProps) => {
           viewport={{ once: true }}
           className="mb-6"
         >
+          <h2 className="text-xl font-bold mb-6 leading-tight">
+            왜 갈수록 PMS가<br />더 심해지는 걸까요?
+          </h2>
           <div className="inline-block bg-white/20 backdrop-blur-sm rounded-2xl px-6 py-4 mb-4">
             <p className="text-lg font-bold leading-relaxed">
               "예전엔 이 정도는<br />아니었는데..."
