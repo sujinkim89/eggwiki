@@ -7,7 +7,7 @@ export const BridgeSection = () => {
 
       {/* Section 3: Warning */}
       <div className="bg-gradient-to-br from-rose/20 to-violet/20 border border-rose/30 rounded-2xl p-5">
-        <h3 className="font-display text-lg text-rose mb-4">📉  '감정 폭주' 혹시 난소의 신호일까요?</h3>
+        <h3 className="font-display text-lg text-rose mb-4">📉  혹시 PMS가 이전보다 심해진 기분인가요?</h3>
         
         
 
