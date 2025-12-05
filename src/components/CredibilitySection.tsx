@@ -11,8 +11,9 @@ const CredibilitySection = () => {
     }} transition={{
       duration: 0.5
     }} className="mb-6">
-        
-        
+        <p className="text-sm text-muted-foreground">
+          혹시? 예전보다 PMS가 심해진 것 같다고 느끼셨나요?
+        </p>
       </motion.div>
 
       {/* Logo Display */}
