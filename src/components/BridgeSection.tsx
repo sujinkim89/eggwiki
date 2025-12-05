@@ -7,23 +7,17 @@ export const BridgeSection = () => {
 
       {/* Section 3: Warning */}
       <div className="bg-gradient-to-br from-rose/20 to-violet/20 border border-rose/30 rounded-2xl p-5">
-        <h3 className="font-display text-lg text-rose mb-4">📉 예전보다 PMS가 심해진 것 같다고 느끼셨나요?</h3>
+        <h3 className="font-display text-lg text-rose mb-4">📉  '감정 폭주' 혹시 난소의 신호일까요?
+
+      </h3>
         
-        <div className="bg-card/80 rounded-xl p-4 mb-4">
-          <p className="text-sm text-muted-foreground leading-relaxed">🔬
-
-
-여성의 호르몬 리듬은 조금씩 변해요. 뇌는 이 낯선 변화에 당황해서 더 예민하게 반응하고, 그게 바로 PMS로 나타나는 거예요.  하지만 이 불안정한 리듬을 그대로 두면, 10년 뒤 더 큰 변화가 찾아올 수 있어요. 하지만 너무 걱정하지 마세요.<br />"예전엔 이 정도 아니었는데..."
-            <br /><br />이런 생각, 한 번쯤 해보셨죠?
-            <br />이건 단순한 컨디션 문제가 아닐 수 있어요.
-            <br /><span className="text-rose font-medium">난소가 보내는 '미리 알림'일 수 있거든요.</span>
-          </p>
-        </div>
+        
 
         <div className="bg-card rounded-xl p-4 text-center">
           <span className="text-3xl mb-3 block">🔬</span>
           <p className="text-base font-display text-rose mb-2">심리테스트는 시작점이에요</p>
-          <p className="text-sm text-muted-foreground">내 유형을 알았다면, 이제 '왜 그런지'를 과학적으로 확인해볼 차례예요. '왜 그런지'를 과학적 데이터로 확인해볼 차례예요.<strong className="text-foreground">'왜 그런지'</strong>를 
+          <p className="text-sm text-muted-foreground">내 유형을 알았다면, 이제 '왜 그런지'를
+과학적으로 확인해볼 차례예요.<strong className="text-foreground">'왜 그런지'</strong>를 
             <br />정확한 숫자로 확인해볼 차례예요.
           </p>
         </div>
@@ -47,8 +41,8 @@ export const BridgeSection = () => {
               </div>
             </div>
             <div className="space-y-2 text-sm text-muted-foreground">
-              
-              
+              <p><strong className="text-foreground">알 수 있는 것:</strong> 난소에 남은 난자의 양</p>
+              <p><strong className="text-foreground">나에게 주는 것:</strong> 임신 가능 기간의 실제 타임라인</p>
             </div>
             <div className="mt-3 p-3 bg-primary/5 rounded-lg">
               <p className="text-xs text-primary">💡 "앞으로 얼마나 쓸 수 있는지, 통장 잔액을 확인하는 것과 같아요"</p>
@@ -67,7 +61,7 @@ export const BridgeSection = () => {
               </div>
             </div>
             <div className="space-y-2 text-sm text-muted-foreground">
-              
+              <p><strong className="text-foreground">알 수 있는 것:</strong> 난소가 얼마나 힘들게 일하고 있는지</p>
               <p><strong className="text-foreground">나에게 주는 것:</strong> 난소 기능 저하의 조기 경고 신호</p>
             </div>
             <div className="mt-3 p-3 bg-rose/5 rounded-lg">
