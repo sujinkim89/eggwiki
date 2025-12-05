@@ -26,17 +26,9 @@ const CredibilitySection = () => {
       delay: 0.2
     }} className="flex justify-center items-center gap-3">
         <div className="bg-card/50 backdrop-blur-sm rounded-2xl px-8 py-6 shadow-card border border-border/50">
-          {/* RHA"BO Logo as styled text */}
-          <div className="flex items-center justify-center gap-0.5">
-            <span className="text-3xl font-bold tracking-tight text-[#3B5BA9]">
-              RHA
-            </span>
-            <span className="text-3xl font-bold text-[#3B5BA9] relative">
-              <span className="absolute -top-1 left-0 text-lg">"</span>
-              <span className="ml-2">BO</span>
-            </span>
-          </div>
-          <p className="text-xs text-muted-foreground mt-2">여성건강 전문 연구소</p>
+          <p className="text-sm font-medium text-foreground">
+            전문의가 직접 운영하는 라보 여성 호르몬 3종 검사
+          </p>
         </div>
       </motion.div>
 
