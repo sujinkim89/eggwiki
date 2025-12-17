@@ -65,9 +65,9 @@ const QuizPage = () => {
           {/* Question Card */}
           <div className="flex-1 flex flex-col justify-center">
             {/* Situation */}
-            <div className="bg-gradient-to-r from-primary/80 to-primary/60 rounded-2xl p-5 shadow-card mb-6 animate-fade-up delay-100">
-              <div className="text-sm text-primary-foreground/80 mb-2">현재 상황은?</div>
-              <p className="text-base font-medium text-primary-foreground leading-relaxed">
+            <div className="bg-gradient-meme rounded-2xl p-5 shadow-card mb-6 animate-fade-up delay-100">
+              <div className="text-sm text-white/80 mb-2">현재 상황은?</div>
+              <p className="text-base font-medium text-white leading-relaxed">
                 {question.situation}
               </p>
             </div>
