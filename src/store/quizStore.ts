@@ -31,7 +31,7 @@ export const useQuizStore = create<QuizState>((set) => ({
   addAnswer: (answer, index) => set((state) => ({ 
     answers: [...state.answers, answer],
     currentQuestion: state.currentQuestion + 1,
-    lastSelectedIndex: index,
+    lastSelectedIndex: null,
   })),
   goBack: () => set((state) => {
     if (state.currentQuestion > 0) {
