@@ -14,8 +14,14 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Noto Sans KR', 'sans-serif'],
+        sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],
         display: ['Black Han Sans', 'sans-serif'],
+        pretendard: ['Pretendard', 'sans-serif'],
+      },
+      letterSpacing: {
+        'tight-mobile': '-0.02em',
+        'normal-mobile': '0',
+        'wide-mobile': '0.02em',
       },
       colors: {
         border: "hsl(var(--border))",
