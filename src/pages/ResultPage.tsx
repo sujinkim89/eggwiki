@@ -273,7 +273,7 @@ const ResultPage = () => {
           </div>
 
           {/* Partner Guide Section */}
-          <div className="bg-gradient-to-br from-[#F8E8FF] to-[#E8D4F8] rounded-2xl p-3 mb-4 animate-fade-up delay-300 shadow-card">
+          <div className="bg-gradient-to-br from-[#F8E8FF] to-[#E8D4F8] rounded-2xl p-3 mb-5 animate-fade-up delay-300 shadow-card">
             {/* Header */}
             <div className="flex items-center gap-2 mb-2">
               <span className="text-lg">👫</span>
