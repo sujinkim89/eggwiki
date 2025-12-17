@@ -7,7 +7,7 @@ import { TypeChart } from "@/components/TypeChart";
 import { ResultCarousel } from "@/components/ResultCarousel";
 import { BridgeSection } from "@/components/BridgeSection";
 import { MaleBridgeSection } from "@/components/MaleBridgeSection";
-import { AllTypesSection } from "@/components/AllTypesSection";
+
 import { CredibilitySection } from "@/components/CredibilitySection";
 import { useQuizStore } from "@/store/quizStore";
 import { getTypeData, calculateCoordinates, maleTypes } from "@/data/quizData";
@@ -273,7 +273,7 @@ const ResultPage = () => {
           </div>
 
           {/* Partner Guide Section */}
-          <div className="bg-gradient-to-br from-[#F8E8FF] to-[#E8D4F8] rounded-2xl p-3 mb-5 animate-fade-up delay-300 shadow-card">
+          <div className="bg-gradient-to-br from-[#F8E8FF] to-[#E8D4F8] rounded-2xl p-3 mb-4 animate-fade-up delay-300 shadow-card">
             {/* Header */}
             <div className="flex items-center gap-2 mb-2">
               <span className="text-lg">👫</span>
@@ -295,7 +295,7 @@ const ResultPage = () => {
             <p className="text-center text-xs text-muted-foreground mb-2">
               PMS 대처유형 궁합
             </p>
-            <div className="grid grid-cols-2 gap-2 mb-3">
+            <div className="grid grid-cols-2 gap-2">
               <div className="bg-white/80 backdrop-blur-sm rounded-xl p-2.5 text-center">
                 <p className="text-[10px] text-muted-foreground mb-0.5">BEST 궁합</p>
                 <p className="text-[11px] font-bold text-foreground leading-tight">{compatibility.best}</p>
@@ -307,12 +307,14 @@ const ResultPage = () => {
                 <p className="text-[9px] text-rose-500 mt-0.5 leading-tight">{compatibility.worstReason}</p>
               </div>
             </div>
+          </div>
 
-            {/* CTA Button */}
+          {/* CTA Button - Outside the box */}
+          <div className="mb-5 animate-fade-up delay-300">
             <Button 
               variant="outline" 
               size="default" 
-              className="w-full bg-white/90 border-[#9D4EDD]/30 hover:bg-white text-foreground font-medium text-sm"
+              className="w-full bg-white border-[#9D4EDD]/30 hover:bg-white/90 text-foreground font-medium text-sm shadow-card"
               onClick={handleShare}
             >
               <Share2 className="w-4 h-4 mr-2 text-[#9D4EDD]" />
@@ -323,12 +325,7 @@ const ResultPage = () => {
             </p>
           </div>
 
-          {/* All Types Section */}
-          <div className="mb-6 animate-fade-up delay-400">
-            <AllTypesSection currentTypeCode={resultType} gender={gender} />
-          </div>
-
-          {/* Bridge Section */}
+          {/* Bridge Section - with gradient background start */}
           <div className="mb-6 animate-fade-up delay-400">
             {gender === 'female' ? <BridgeSection /> : <MaleBridgeSection />}
           </div>
