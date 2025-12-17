@@ -121,6 +121,7 @@ export const BridgeSection = () => {
             src={appMockup} 
             alt="라보 앱 화면" 
             className="w-full max-w-md mx-auto"
+            style={{ imageRendering: 'auto', WebkitBackfaceVisibility: 'hidden' }}
           />
         </motion.div>
 

@@ -309,22 +309,7 @@ const ResultPage = () => {
             </div>
           </div>
 
-          {/* CTA Button - Outside the box */}
-          <div className="mb-5 animate-fade-up delay-300">
-            <Button 
-              variant="outline" 
-              size="default" 
-              className="w-full bg-white border-[#9D4EDD]/30 hover:bg-white/90 text-foreground font-medium text-sm shadow-card"
-              onClick={handleShare}
-            >
-              <Share2 className="w-4 h-4 mr-2 text-[#9D4EDD]" />
-              테스트 링크 공유하기
-            </Button>
-            <p className="text-[10px] text-center text-[#9D4EDD] mt-1.5">
-              "궁합 테스트하고 PMS 평화협정 맺기"
-            </p>
-          </div>
-
+          {/* Bridge Section - with gradient background start */}
           {/* Bridge Section - with gradient background start */}
           <div className="mb-6 animate-fade-up delay-400">
             {gender === 'female' ? <BridgeSection /> : <MaleBridgeSection />}
