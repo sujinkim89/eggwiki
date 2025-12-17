@@ -9,8 +9,8 @@ export const BridgeSection = () => {
   return (
     <div className="w-full font-pretendard">
 
-      {/* === PHASE 1: 반전 트리거 (Light Purple Section) === */}
-      <div className="py-8 text-center bg-gradient-to-b from-transparent to-[#E8E0F0]">
+      {/* === PHASE 1: 반전 트리거 (Gradient Start) === */}
+      <div className="py-8 text-center bg-gradient-to-b from-[#F8E8FF]/50 via-[#E8E0F0] to-[#E8E0F0]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
