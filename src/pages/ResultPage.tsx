@@ -53,6 +53,36 @@ const ResultPage = () => {
     return '독특한 유형';
   };
 
+  // Get main and sub hormone info
+  const getHormoneInfo = () => {
+    const hormones = {
+      T: { name: '테스토스테론', emoji: '⚡', desc: '목표 쉐도 모드. 논리로 감정을 눌러버리고 해결책을 찾아 직진하는 전투형 호르몬.' },
+      E: { name: '에스트로겐', emoji: '💗', desc: '공감 연결 모드. 타인의 감정을 흡수하고 관계 속에서 안정감을 찾는 유대형 호르몬.' },
+      D: { name: '도파민', emoji: '🚀', desc: '자극 갈망 모드. 지루함은 적, 새로운 자극이 곧 산소. 쾌락과 흥분을 향해 돌진하는 모험형 호르몬.' },
+      S: { name: '세로토닌', emoji: '🌿', desc: '안정 추구 모드. 예측 가능한 루틴과 평화로운 환경 속에서 에너지를 충전하는 균형형 호르몬.' },
+    };
+
+    // Parse resultType to get main and sub hormones
+    // Format: TD_T, TS_S, ED_D, ES_T etc.
+    const parts = resultType.split('_');
+    let main: 'T' | 'E' | 'D' | 'S' = 'T';
+    let sub: 'T' | 'E' | 'D' | 'S' = 'D';
+
+    if (parts.length >= 1) {
+      // First part like "TD", "TS", "ED", "ES"
+      const firstPart = parts[0];
+      if (firstPart.includes('T')) main = 'T';
+      else if (firstPart.includes('E')) main = 'E';
+
+      if (firstPart.includes('D')) sub = 'D';
+      else if (firstPart.includes('S')) sub = 'S';
+    }
+
+    return { main: hormones[main], sub: hormones[sub] };
+  };
+
+  const hormoneInfo = getHormoneInfo();
+
   const handleShare = async () => {
     const shareText = `나의 PMS ${gender === 'female' ? '호르몬' : '대응'} 유형은 "${type.title}" ${type.emoji}\n\n나도 테스트하기 👇`;
     if (navigator.share) {
@@ -143,8 +173,36 @@ const ResultPage = () => {
               </p>
 
               {/* Chart */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 mb-4">
                 <TypeChart x={coordinates.x} y={coordinates.y} />
+              </div>
+
+              {/* Main Hormone */}
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 mb-3 border-l-4 border-[#9D4EDD]">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-lg">{hormoneInfo.main.emoji}</span>
+                    <span className="font-bold text-foreground">주지배: {hormoneInfo.main.name}</span>
+                  </div>
+                  <span className="text-xs bg-[#9D4EDD] text-white px-2 py-1 rounded-full font-medium">MAIN</span>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {hormoneInfo.main.desc}
+                </p>
+              </div>
+
+              {/* Sub Hormone */}
+              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 border-l-4 border-muted-foreground/30">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-lg">{hormoneInfo.sub.emoji}</span>
+                    <span className="font-bold text-foreground">부지배: {hormoneInfo.sub.name}</span>
+                  </div>
+                  <span className="text-xs bg-muted text-muted-foreground px-2 py-1 rounded-full font-medium">SUB</span>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {hormoneInfo.sub.desc}
+                </p>
               </div>
             </div>
           </div>
