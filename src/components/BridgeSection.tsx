@@ -6,7 +6,7 @@ import hormoneCharacters from "@/assets/hormone-characters-trio.png";
 
 export const BridgeSection = () => {
   return (
-    <div className="w-full">
+    <div className="w-full font-pretendard">
 
       {/* === PHASE 1: 반전 트리거 (Light Purple Section) === */}
       <div className="py-8 text-center bg-gradient-to-b from-transparent to-[#E8E0F0]">
@@ -18,10 +18,10 @@ export const BridgeSection = () => {
         >
           <span className="text-5xl mb-4 block">😰</span>
           <div className="space-y-1">
-            <p className="text-lg font-bold text-foreground">
+            <p className="text-lg font-bold text-foreground tracking-tight-mobile">
               PMS가 갈수록 심해지는 기분
             </p>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground tracking-normal-mobile">
               혹시 느끼셨나요?
             </p>
           </div>
@@ -47,10 +47,10 @@ export const BridgeSection = () => {
           className="mb-10"
         >
           <div className="text-center mb-6">
-            <h3 className="text-xl font-bold text-white mb-2">
+            <h3 className="text-[22px] font-extrabold text-white mb-2 tracking-tight leading-tight">
               불안을 데이터로 바꿔야 합니다.
             </h3>
-            <p className="text-sm text-slate-400">
+            <p className="text-[13px] text-slate-400 tracking-wide-mobile">
               우리 몸에는 여성 3대 호르몬이 있습니다.
             </p>
           </div>
@@ -58,28 +58,28 @@ export const BridgeSection = () => {
           <img 
             src={hormoneCharacters} 
             alt="AMH, FSH, E2 호르몬 캐릭터" 
-            className="w-full max-w-sm mx-auto rounded-xl mb-4"
+            className="w-full max-w-sm mx-auto rounded-xl mb-5"
           />
           
           {/* Hormone Descriptions - 3 Column */}
-          <div className="grid grid-cols-3 gap-3 text-center max-w-sm mx-auto">
+          <div className="grid grid-cols-3 gap-4 text-center max-w-sm mx-auto">
             <div>
-              <p className="text-white font-bold text-sm">AMH</p>
-              <p className="text-slate-400 text-[10px] leading-tight">
+              <p className="text-white font-bold text-[15px] mb-1 tracking-tight">AMH</p>
+              <p className="text-slate-400 text-[11px] leading-relaxed tracking-normal-mobile">
                 난소 나이
                 <br />가임력의 타이머
               </p>
             </div>
             <div>
-              <p className="text-white font-bold text-sm">FSH</p>
-              <p className="text-slate-400 text-[10px] leading-tight">
+              <p className="text-white font-bold text-[15px] mb-1 tracking-tight">FSH</p>
+              <p className="text-slate-400 text-[11px] leading-relaxed tracking-normal-mobile">
                 난포자극호르몬
                 <br />난소 활동 신호
               </p>
             </div>
             <div>
-              <p className="text-white font-bold text-sm">E2</p>
-              <p className="text-slate-400 text-[10px] leading-tight">
+              <p className="text-white font-bold text-[15px] mb-1 tracking-tight">E2</p>
+              <p className="text-slate-400 text-[11px] leading-relaxed tracking-normal-mobile">
                 에스트로겐
                 <br />여성성 조율 호르몬
               </p>
@@ -95,13 +95,13 @@ export const BridgeSection = () => {
           viewport={{ once: true }}
           className="text-center mb-6"
         >
-          <h2 className="text-4xl font-bold text-[#4A7CFF] tracking-wider mb-3">
+          <h2 className="text-4xl font-black text-[#4A7CFF] tracking-wider mb-3">
             RHA"BO
           </h2>
-          <p className="text-sm text-slate-400">
-            <span className="text-[#4A7CFF]">의사</span>가 직접 만든
+          <p className="text-[13px] text-slate-400 tracking-wide-mobile">
+            <span className="text-[#4A7CFF] font-semibold">의사</span>가 직접 만든
           </p>
-          <p className="text-white font-medium">
+          <p className="text-white font-semibold text-[15px] tracking-tight-mobile">
             여성호르몬 분석 서비스
           </p>
         </motion.div>
@@ -129,37 +129,37 @@ export const BridgeSection = () => {
           viewport={{ once: true }}
         >
           <div className="bg-[#2D3A4F] rounded-2xl p-4 mb-6">
-            <h4 className="text-white font-bold text-center mb-4 text-sm">
+            <h4 className="text-white font-bold text-center mb-4 text-[14px] tracking-tight-mobile">
               검사 후, 이런 것들이 명확해집니다
             </h4>
-            <ul className="space-y-2.5 text-slate-300 text-xs">
+            <ul className="space-y-3 text-slate-300 text-[12px] leading-relaxed">
               <li className="flex items-start gap-2">
-                <span className="text-[#4A7CFF] mt-0.5">●</span>
-                <span>
+                <span className="text-[#4A7CFF] mt-0.5 flex-shrink-0">●</span>
+                <span className="tracking-normal-mobile">
                   요즘 PMS가 왜 심해졌는지 
-                  <span className="text-[#4A7CFF]"> (호르몬 데이터로 확인)</span>
+                  <span className="text-[#4A7CFF] font-medium"> (호르몬 데이터로 확인)</span>
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#4A7CFF] mt-0.5">●</span>
-                <span>
+                <span className="text-[#4A7CFF] mt-0.5 flex-shrink-0">●</span>
+                <span className="tracking-normal-mobile">
                   내 난소 나이는 실제로 몇 살인지 
-                  <span className="text-[#4A7CFF]"> (실제 나이 ≠ 난소 나이)</span>
+                  <span className="text-[#4A7CFF] font-medium"> (실제 나이 ≠ 난소 나이)</span>
                 </span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#4A7CFF] mt-0.5">●</span>
-                <span>임신 계획이 있다면, 언제까지 준비해야 하는지</span>
+                <span className="text-[#4A7CFF] mt-0.5 flex-shrink-0">●</span>
+                <span className="tracking-normal-mobile">임신 계획이 있다면, 언제까지 준비해야 하는지</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#4A7CFF] mt-0.5">●</span>
-                <span>갱년기가 대략 언제쯤 시작될지</span>
+                <span className="text-[#4A7CFF] mt-0.5 flex-shrink-0">●</span>
+                <span className="tracking-normal-mobile">갱년기가 대략 언제쯤 시작될지</span>
               </li>
               <li className="flex items-start gap-2">
-                <span className="text-[#4A7CFF] mt-0.5">●</span>
-                <span>
+                <span className="text-[#4A7CFF] mt-0.5 flex-shrink-0">●</span>
+                <span className="tracking-normal-mobile">
                   지금 당장 무엇을 해야 하는지 
-                  <span className="text-[#4A7CFF]"> (맞춤 솔루션)</span>
+                  <span className="text-[#4A7CFF] font-medium"> (맞춤 솔루션)</span>
                 </span>
               </li>
             </ul>
@@ -167,26 +167,26 @@ export const BridgeSection = () => {
 
           {/* Testimonials */}
           <div className="bg-[#2D3A4F] rounded-2xl p-4 mb-6">
-            <p className="text-center text-white font-medium text-sm mb-4">
+            <p className="text-center text-white font-semibold text-[14px] mb-4 tracking-tight-mobile">
               먼저 검사받은 분들의 이야기
             </p>
             <div className="space-y-3">
               <div className="bg-[#1E293B] rounded-xl p-3 border border-slate-600/30">
-                <p className="text-slate-300 text-xs leading-relaxed mb-1">
+                <p className="text-slate-300 text-[12px] leading-relaxed mb-1 tracking-normal-mobile">
                   "AMH 수치 보고 솔직히 충격받았어요. 근데 오히려 마음이 편해졌어요. 
                   뭘 해야 할지 명확해지니까요."
                 </p>
                 <p className="text-slate-500 text-[10px]">— 32세, 직장인</p>
               </div>
               <div className="bg-[#1E293B] rounded-xl p-3 border border-slate-600/30">
-                <p className="text-slate-300 text-xs leading-relaxed mb-1">
+                <p className="text-slate-300 text-[12px] leading-relaxed mb-1 tracking-normal-mobile">
                   "FSH가 높게 나와서 난자 동결 바로 결정했어요. 
                   6개월만 늦었어도 정말 후회했을 것 같아요."
                 </p>
                 <p className="text-slate-500 text-[10px]">— 29세, 프리랜서</p>
               </div>
               <div className="bg-[#1E293B] rounded-xl p-3 border border-slate-600/30">
-                <p className="text-slate-300 text-xs leading-relaxed mb-1">
+                <p className="text-slate-300 text-[12px] leading-relaxed mb-1 tracking-normal-mobile">
                   "PMS가 심한 게 제 탓이 아니었더라고요. 
                   호르몬 관리 시작하고 진짜 인생이 달라졌어요."
                 </p>
@@ -197,8 +197,8 @@ export const BridgeSection = () => {
 
           {/* Final CTA */}
           <div className="bg-[#3B4A6B] rounded-2xl p-5 text-center">
-            <p className="text-white text-sm font-medium">지금 이 순간에도</p>
-            <p className="text-slate-400 text-xs mb-4">난소는 나이를 먹고 있습니다.</p>
+            <p className="text-white text-[14px] font-semibold tracking-tight-mobile">지금 이 순간에도</p>
+            <p className="text-slate-400 text-[12px] mb-4 tracking-normal-mobile">난소는 나이를 먹고 있습니다.</p>
 
             <a 
               href="https://www.rhabo.co.kr" 
@@ -207,7 +207,7 @@ export const BridgeSection = () => {
               className="block"
             >
               <Button 
-                className="w-full bg-[#4A7CFF] hover:bg-[#3A6CEF] text-white font-bold py-4 rounded-xl"
+                className="w-full bg-[#4A7CFF] hover:bg-[#3A6CEF] text-white font-bold py-4 rounded-xl text-[14px] tracking-tight-mobile"
               >
                 <Sparkles className="w-4 h-4 mr-2" />
                 혜택 받고 시작하기
