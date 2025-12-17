@@ -70,16 +70,6 @@ export const ResultCarousel = ({ type, nickname, gender }: ResultCarouselProps) 
             </div>
           ))}
         </div>
-
-        {/* Bottom tip */}
-        <div className="mt-3 bg-white/60 backdrop-blur-sm rounded-2xl p-4">
-          <p className="text-sm font-bold text-foreground mb-1">
-            "감정의 속도 늦추기 훈련"
-          </p>
-          <p className="text-xs text-muted-foreground leading-relaxed">
-            지금 넘치는 감정은 당신의 잘못이 아니지만, 그 감정을 그대로 표출하면 후회할 일이 생깁니다. 감정이 혹 올라올 때 바로 반응하지 말고, 딱 '3초 딜레이'를 거는 훈련이 필요합니다.
-          </p>
-        </div>
       </div>
     </div>
   );
