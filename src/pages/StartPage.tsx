@@ -46,7 +46,7 @@ const StartPage = () => {
           </div>
 
           {/* Villain Image */}
-          <div className="mx-auto mb-6 animate-fade-up delay-200">
+          <div className="flex justify-center mb-6 animate-fade-up delay-200">
             <img 
               src={villainMirror} 
               alt="거울 속 빌런 모습" 
