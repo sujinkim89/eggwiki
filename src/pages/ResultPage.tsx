@@ -223,7 +223,7 @@ const ResultPage = () => {
 
             {/* Watermark for share image */}
             <p className="text-xs text-muted-foreground/60 mt-4">
-              hormone-navigator.vercel.app
+              made with ❤️ by @rhabo
             </p>
           </div>
 
