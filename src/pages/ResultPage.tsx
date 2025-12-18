@@ -181,9 +181,6 @@ const ResultPage = () => {
               {nickname}님의 {gender === 'female' ? '호르몬 자아' : 'PMS 대응 유형'}는...
             </p>
 
-            {/* Large Emoji */}
-            <div className="text-6xl mb-2">{type.emoji}</div>
-
             {/* Hook Line - Main title */}
             <h1 className="font-display text-2xl font-bold text-foreground mb-4">
               {type.hookLine.split(' - ')[0]}
@@ -226,7 +223,7 @@ const ResultPage = () => {
 
             {/* Watermark for share image */}
             <p className="text-xs text-muted-foreground/60 mt-4">
-              pms-test.vercel.app
+              hormone-navigator.vercel.app
             </p>
           </div>
 
