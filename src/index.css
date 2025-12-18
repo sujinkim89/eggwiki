@@ -23,7 +23,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 270 50% 10%;
 
-    --primary: 330 90% 60%;
+    --primary: 270 75% 60%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 280 80% 55%;
@@ -40,21 +40,21 @@
 
     --border: 270 20% 90%;
     --input: 270 20% 90%;
-    --ring: 330 90% 60%;
+    --ring: 270 75% 60%;
 
     --radius: 1rem;
 
-    /* Custom colors */
-    --hot-pink: 330 90% 60%;
-    --rose: 350 85% 50%;
+    /* Custom colors - Purple base gradient */
+    --hot-pink: 275 80% 65%;
+    --rose: 270 75% 55%;
     --violet: 265 85% 55%;
     --deep-purple: 270 75% 30%;
     --warning-yellow: 45 95% 55%;
     --alert-red: 0 85% 60%;
     
     /* Gradients */
-    --gradient-meme: linear-gradient(135deg, hsl(330, 90%, 60%) 0%, hsl(350, 85%, 50%) 50%, hsl(265, 85%, 55%) 100%);
-    --gradient-aura: radial-gradient(ellipse at center, hsl(330, 90%, 70%, 0.4) 0%, hsl(265, 85%, 60%, 0.2) 50%, transparent 70%);
+    --gradient-meme: linear-gradient(135deg, hsl(275, 80%, 70%) 0%, hsl(270, 75%, 55%) 50%, hsl(265, 85%, 45%) 100%);
+    --gradient-aura: radial-gradient(ellipse at center, hsl(275, 80%, 70%, 0.4) 0%, hsl(265, 85%, 60%, 0.2) 50%, transparent 70%);
     --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%) 0%, hsl(270, 30%, 98%) 100%);
   }
 
@@ -68,7 +68,7 @@
     --popover: 270 40% 10%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 330 90% 65%;
+    --primary: 270 75% 65%;
     --primary-foreground: 270 50% 5%;
 
     --secondary: 280 80% 60%;
@@ -85,7 +85,7 @@
 
     --border: 270 30% 20%;
     --input: 270 30% 20%;
-    --ring: 330 90% 65%;
+    --ring: 270 75% 65%;
   }
 }
 

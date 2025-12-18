@@ -139,9 +139,6 @@ export const MaleBridgeSection = () => {
             <Gift className="w-5 h-5" />
             여자친구에게 선물하기
           </Button>
-          <Button variant="outline" size="lg" className="w-full">
-            검사 상품 구경하기
-          </Button>
         </div>
       </div>
 

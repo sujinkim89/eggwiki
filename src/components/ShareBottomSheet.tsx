@@ -287,7 +287,7 @@ export const ShareBottomSheet = ({
     {
       icon: Download,
       label: "이미지 저장",
-      color: "bg-gradient-to-br from-purple-500 to-pink-500",
+      color: "bg-gradient-to-br from-violet to-deep-purple",
       iconColor: "text-white",
       onClick: handleSaveImage,
       disabled: isCapturing,
