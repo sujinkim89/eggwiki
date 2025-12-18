@@ -370,9 +370,26 @@ const ResultPage = () => {
               </p>
 
               {/* Source */}
-              <p className="text-center text-xs text-white/40 italic">
+              <p className="text-center text-xs text-white/40 italic mb-6">
                 (Source: Penn Ovarian Aging Study & Harvard Medical School Joint Research)
               </p>
+
+              {/* CTA Section */}
+              <div className="border-t border-white/10 pt-6">
+                <p className="text-center text-white font-bold text-base mb-4 leading-relaxed">
+                  여자의 몸의 주도권을 되찾는<br />가장 과학적인 첫걸음
+                </p>
+                <a 
+                  href="https://www.rhabo.co.kr" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  <Button className="w-full bg-[#4A7CFF] hover:bg-[#3A6CEF] text-white font-bold py-4 rounded-xl text-sm">
+                    30만원 상당 전문병원 쿠폰 받고 시작하기
+                  </Button>
+                </a>
+              </div>
             </div>
           </div>
 
