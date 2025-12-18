@@ -20,14 +20,15 @@ const StartPage = () => {
         <div className="w-full max-w-md mx-auto text-center relative z-10">
           
           {/* Main Title */}
-          <div className="mb-6">
-            <h1 className="font-display text-3xl sm:text-4xl font-black tracking-tight mb-2">
-              <span className="text-gradient-meme">PMS 빌런 분석기</span>
-            </h1>
-            <div className="inline-flex items-center gap-1.5 bg-primary/10 border border-primary/20 px-3 py-1 rounded-full">
+          <div className="mb-2">
+          <div className="inline-flex items-center gap-1.5 bg-primary/10 border border-primary/20 px-3 py-1 mb-2 rounded-full">
               <Zap className="w-3.5 h-3.5 text-primary" />
               <span className="text-xs font-medium text-primary">에겐/테토 분석 끝판왕</span>
             </div>
+            <h1 className="font-display text-3xl sm:text-4xl font-black tracking-tight">
+              <span className="text-gradient-meme">PMS 빌런 분석기</span>
+            </h1>
+
           </div>
 
           {/* Subtitle */}
