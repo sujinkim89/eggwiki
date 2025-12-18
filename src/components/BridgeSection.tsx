@@ -201,8 +201,7 @@ export const BridgeSection = () => {
               <Button 
                 className="w-full bg-[#4A7CFF] hover:bg-[#3A6CEF] text-white font-bold py-4 rounded-xl text-[14px] tracking-tight-mobile"
               >
-                <Sparkles className="w-4 h-4 mr-2" />
-                30만원 상당 전문병원 쿠폰 받고 시작하기
+                30만원 전문병원 쿠폰 모두 증정
               </Button>
             </a>
           </div>

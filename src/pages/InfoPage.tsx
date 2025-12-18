@@ -28,10 +28,6 @@ const InfoPage = () => {
     <AuraBackground>
       <div className="min-h-screen flex flex-col items-center justify-center px-4 py-8">
         <div className="w-full max-w-md mx-auto">
-          {/* Egg Character */}
-          <div className="flex justify-center mb-4">
-            <EggCharacter size="sm" mood="angry" animate={false} />
-          </div>
 
           {/* Warning Title */}
           <div className="text-center mb-6">

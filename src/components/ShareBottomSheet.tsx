@@ -1,11 +1,12 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import {
   Drawer,
   DrawerContent,
   DrawerHeader,
   DrawerTitle,
 } from "@/components/ui/drawer";
-import { Link2, Image, MessageCircle, Twitter, MoreHorizontal } from "lucide-react";
+import { Link2, Image, MoreHorizontal } from "lucide-react";
+import { SiKakaotalk, SiX } from "react-icons/si";
 import { toast } from "sonner";
 
 interface ShareBottomSheetProps {
@@ -187,7 +188,7 @@ export const ShareBottomSheet = ({
 
   const shareOptions = [
     {
-      icon: MessageCircle,
+      icon: SiKakaotalk,
       label: "카카오톡",
       color: "bg-[#FEE500]",
       iconColor: "text-[#3C1E1E]",
@@ -209,7 +210,7 @@ export const ShareBottomSheet = ({
       disabled: isCapturing,
     },
     {
-      icon: Twitter,
+      icon: SiX,
       label: "X (트위터)",
       color: "bg-black",
       iconColor: "text-white",
