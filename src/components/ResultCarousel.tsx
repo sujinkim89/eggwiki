@@ -31,7 +31,7 @@ export const ResultCarousel = ({ type, nickname, gender }: ResultCarouselProps) 
   return (
     <div className="w-full animate-fade-up">
       {/* Outer container with gradient */}
-      <div className="bg-gradient-to-br from-[#F8E8FF] to-[#E8D4F8] rounded-3xl p-4 shadow-card">
+      <div className="bg-gradient-to-br from-[#F8E8FF] to-[#E8D4F8] rounded-2xl p-4 shadow-card">
         {/* Header */}
         <div className="flex items-center gap-2 mb-4">
           <span className="text-xl">💊</span>

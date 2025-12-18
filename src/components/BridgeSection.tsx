@@ -9,7 +9,7 @@ export const BridgeSection = () => {
   return (
     <div className="w-full font-pretendard">
       {/* === PHASE 2: Dark Section === */}
-      <div className="bg-[#1E293B] py-8 px-4">
+      <div className="bg-[#1E293B] rounded-b-2xl py-8 px-5">
 
         {/* Hormone Characters Section */}
         <motion.div
@@ -17,9 +17,9 @@ export const BridgeSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="mb-10"
+          className="mb-8"
         >
-          <div className="text-center mb-5">
+          <div className="text-center mb-4">
             <h3 className="text-[20px] font-bold text-white mb-1.5 tracking-tight leading-tight font-pretendard">
               불안을 데이터로 바꿔야 합니다.
             </h3>
@@ -28,10 +28,10 @@ export const BridgeSection = () => {
             </p>
           </div>
           
-          <img 
-            src={hormoneCharacters} 
-            alt="AMH, FSH, E2 호르몬 캐릭터" 
-            className="w-full max-w-sm mx-auto rounded-xl mb-5"
+          <img
+            src={hormoneCharacters}
+            alt="AMH, FSH, E2 호르몬 캐릭터"
+            className="w-full max-w-sm mx-auto rounded-xl mb-4"
           />
           
           {/* Hormone Descriptions - 3 Column */}
@@ -66,21 +66,21 @@ export const BridgeSection = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
-          className="mb-8"
+          className="mb-6"
         >
           {/* White Card Container */}
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mx-2">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-5">
             {/* RHABO Logo Image */}
-            <div className="flex justify-center mb-4">
-              <img 
-                src={rhaboLogoSignature} 
-                alt="RHABO 로고" 
+            <div className="flex justify-center mb-3">
+              <img
+                src={rhaboLogoSignature}
+                alt="RHABO 로고"
                 className="h-8 w-auto"
               />
             </div>
-            
+
             {/* Main Description */}
-            <p className="text-center text-white font-bold text-[15px] mb-5 tracking-tight font-pretendard">
+            <p className="text-center text-white font-bold text-[15px] mb-4 tracking-tight font-pretendard">
               전문의가 직접 운영하는 라보 여성 호르몬 3종 검사
             </p>
             
@@ -103,7 +103,7 @@ export const BridgeSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="relative mb-10"
+          className="relative mb-8"
         >
           <img 
             src={appMockup} 
@@ -120,8 +120,8 @@ export const BridgeSection = () => {
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          <div className="bg-[#2D3A4F] rounded-2xl p-4 mb-6">
-            <h4 className="text-white font-bold text-center mb-4 text-[14px] tracking-tight-mobile">
+          <div className="bg-[#2D3A4F] rounded-2xl p-4 mb-4">
+            <h4 className="text-white font-bold text-center mb-3 text-[14px] tracking-tight-mobile">
               검사 후, 이런 것들이 명확해집니다
             </h4>
             <ul className="space-y-3 text-slate-300 text-[12px] leading-relaxed">
@@ -158,11 +158,11 @@ export const BridgeSection = () => {
           </div>
 
           {/* Testimonials */}
-          <div className="bg-[#2D3A4F] rounded-2xl p-4 mb-6">
-            <p className="text-center text-white font-semibold text-[14px] mb-4 tracking-tight-mobile">
+          <div className="bg-[#2D3A4F] rounded-2xl p-4 mb-4">
+            <p className="text-center text-white font-semibold text-[14px] mb-3 tracking-tight-mobile">
               먼저 검사받은 분들의 이야기
             </p>
-            <div className="space-y-3">
+            <div className="space-y-2.5">
               <div className="bg-[#1E293B] rounded-xl p-3 border border-slate-600/30">
                 <p className="text-slate-300 text-[12px] leading-relaxed mb-1 tracking-normal-mobile">
                   "AMH 수치 보고 솔직히 충격받았어요. 근데 오히려 마음이 편해졌어요. 
@@ -190,7 +190,7 @@ export const BridgeSection = () => {
           {/* Final CTA */}
           <div className="bg-[#3B4A6B] rounded-2xl p-5 text-center">
             <p className="text-white text-[14px] font-semibold tracking-tight-mobile">여자의 몸의 주도권을 되찾는</p>
-            <p className="text-slate-400 text-[12px] mb-4 tracking-normal-mobile">가장 과학적인 첫걸음</p>
+            <p className="text-slate-400 text-[12px] mb-3 tracking-normal-mobile">가장 과학적인 첫걸음</p>
 
             <a 
               href="https://www.rhabo.co.kr" 

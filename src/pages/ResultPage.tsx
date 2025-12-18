@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuraBackground } from "@/components/AuraBackground";
 import { EggCharacter } from "@/components/EggCharacter";
@@ -7,6 +7,7 @@ import { TypeChart } from "@/components/TypeChart";
 import { ResultCarousel } from "@/components/ResultCarousel";
 import { BridgeSection } from "@/components/BridgeSection";
 import { MaleBridgeSection } from "@/components/MaleBridgeSection";
+import { ShareBottomSheet } from "@/components/ShareBottomSheet";
 
 
 import { useQuizStore } from "@/store/quizStore";
@@ -15,6 +16,8 @@ import { Share2, RotateCcw } from "lucide-react";
 import { toast } from "sonner";
 const ResultPage = () => {
   const navigate = useNavigate();
+  const [shareOpen, setShareOpen] = useState(false);
+  const resultCardRef = useRef<HTMLDivElement>(null);
   const {
     nickname,
     gender,
@@ -158,22 +161,8 @@ const ResultPage = () => {
 
   const compatibility = getCompatibilityInfo();
 
-  const handleShare = async () => {
-    const shareText = `나의 PMS ${gender === 'female' ? '호르몬' : '대응'} 유형은 "${type.title}" ${type.emoji}\n\n나도 테스트하기 👇`;
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: 'PMS 호르몬 유형 테스트',
-          text: shareText,
-          url: window.location.origin
-        });
-      } catch (err) {
-        // User cancelled
-      }
-    } else {
-      await navigator.clipboard.writeText(shareText + '\n' + window.location.origin);
-      toast.success("클립보드에 복사되었어요!");
-    }
+  const handleShare = () => {
+    setShareOpen(true);
   };
   const handleRestart = () => {
     resetQuiz();
@@ -183,7 +172,7 @@ const ResultPage = () => {
       <div className="min-h-screen px-4 py-6">
         <div className="w-full max-w-md mx-auto">
           {/* Result Header - Hero Section (Screenshot-friendly) */}
-          <div className="text-center mb-6 animate-fade-up">
+          <div ref={resultCardRef} className="text-center mb-6 animate-fade-up">
             <p className="text-sm text-muted-foreground mb-3">
               {nickname}님의 {gender === 'female' ? '호르몬 자아' : 'PMS 대응 유형'}는...
             </p>
@@ -234,15 +223,15 @@ const ResultPage = () => {
           </div>
 
           {/* Carousel Tabs - Detailed Info (PMS 호르몬 처방전) */}
-          <div className="mb-5 animate-fade-up delay-100">
+          <div className="mb-6 animate-fade-up delay-100">
             <ResultCarousel type={type} nickname={nickname} gender={gender} />
           </div>
 
           {/* Hormone Coordinate Section with Chart */}
-          <div className="mb-5 animate-fade-up delay-200">
-            <div className="bg-gradient-to-br from-[#F8E8FF] to-[#E8D4F8] rounded-2xl p-3 shadow-card">
+          <div className="mb-6 animate-fade-up delay-200">
+            <div className="bg-gradient-to-br from-[#F8E8FF] to-[#E8D4F8] rounded-2xl p-4 shadow-card">
               {/* Header */}
-              <div className="flex items-center justify-center gap-2 mb-3">
+              <div className="flex items-center justify-center gap-2 mb-4">
                 <span className="text-lg">📍</span>
                 <h3 className="font-display text-base font-bold text-[#9D4EDD]">
                   내 호르몬 좌표
@@ -250,32 +239,32 @@ const ResultPage = () => {
               </div>
 
               {/* Description - hookLine split into two lines */}
-              <div className="text-center mb-3">
+              <div className="text-center mb-4">
                 <p className="text-lg font-bold text-foreground">
                   {type.hookLine.split(' - ')[0]}
                 </p>
                 {type.hookLine.includes(' - ') && (
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground mt-1">
                     {type.hookLine.split(' - ')[1]}
                   </p>
                 )}
               </div>
 
               {/* Chart */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-3 mb-3">
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 mb-4">
                 <TypeChart x={coordinates.x} y={coordinates.y} />
               </div>
 
               {/* Main Hormone */}
-              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-3 mb-2 border-l-4 border-[#9D4EDD]">
-                <div className="flex items-center justify-between mb-1.5">
-                  <div className="flex items-center gap-1.5">
+              <div className="bg-white/80 backdrop-blur-sm rounded-xl p-4 mb-3 border-l-4 border-[#9D4EDD]">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-2">
                     <span className="text-base">{hormoneInfo.main.emoji}</span>
                     <span className="font-bold text-foreground text-sm">주지배: {hormoneInfo.main.name}</span>
                   </div>
-                  <div className="flex items-center gap-1.5">
+                  <div className="flex items-center gap-2">
                     <span className="text-[10px] text-[#9D4EDD] font-bold">상위 {hormoneInfo.main.percentile}%</span>
-                    <span className="text-[10px] bg-[#9D4EDD] text-white px-1.5 py-0.5 rounded-full font-medium">MAIN</span>
+                    <span className="text-[10px] bg-[#9D4EDD] text-white px-2 py-0.5 rounded-full font-medium">MAIN</span>
                   </div>
                 </div>
                 <p className="text-xs text-muted-foreground leading-relaxed">
@@ -284,15 +273,15 @@ const ResultPage = () => {
               </div>
 
               {/* Sub Hormone */}
-              <div className="bg-white/60 backdrop-blur-sm rounded-xl p-3 border-l-4 border-muted-foreground/30">
-                <div className="flex items-center justify-between mb-1.5">
-                  <div className="flex items-center gap-1.5">
+              <div className="bg-white/60 backdrop-blur-sm rounded-xl p-4 border-l-4 border-muted-foreground/30">
+                <div className="flex items-center justify-between mb-2">
+                  <div className="flex items-center gap-2">
                     <span className="text-base">{hormoneInfo.sub.emoji}</span>
                     <span className="font-bold text-foreground text-sm">부지배: {hormoneInfo.sub.name}</span>
                   </div>
-                  <div className="flex items-center gap-1.5">
+                  <div className="flex items-center gap-2">
                     <span className="text-[10px] text-muted-foreground font-bold">상위 {hormoneInfo.sub.percentile}%</span>
-                    <span className="text-[10px] bg-muted text-muted-foreground px-1.5 py-0.5 rounded-full font-medium">SUB</span>
+                    <span className="text-[10px] bg-muted text-muted-foreground px-2 py-0.5 rounded-full font-medium">SUB</span>
                   </div>
                 </div>
                 <p className="text-xs text-muted-foreground leading-relaxed">
@@ -303,7 +292,7 @@ const ResultPage = () => {
           </div>
 
           {/* Partner Guide Section */}
-          <div className="bg-gradient-to-br from-[#F8E8FF] to-[#E8D4F8] rounded-2xl p-3 mb-5 animate-fade-up delay-300 shadow-card">
+          <div className="bg-gradient-to-br from-[#F8E8FF] to-[#E8D4F8] rounded-2xl p-4 mb-6 animate-fade-up delay-300 shadow-card">
             {/* Header */}
             <div className="flex items-center gap-2 mb-4">
               <span className="text-xl">👫</span>
@@ -314,7 +303,7 @@ const ResultPage = () => {
 
             {/* Guide Content */}
             {type.bfGuide && (
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 mb-3">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 mb-4">
                 <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
                   {type.bfGuide}
                 </p>
@@ -322,25 +311,25 @@ const ResultPage = () => {
             )}
 
             {/* Compatibility Section */}
-            <p className="text-center text-sm text-muted-foreground mb-2">
+            <p className="text-center text-sm text-muted-foreground mb-3">
               PMS 대처유형 궁합
             </p>
-            <div className="grid grid-cols-2 gap-2">
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-3 text-center">
+            <div className="grid grid-cols-2 gap-3">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 text-center">
                 <p className="text-xs text-muted-foreground mb-1">BEST 궁합</p>
                 <p className="text-sm font-bold text-foreground leading-tight">{compatibility.best}</p>
-                <p className="text-xs text-[#9D4EDD] mt-1 leading-tight">{compatibility.bestReason}</p>
+                <p className="text-xs text-[#9D4EDD] mt-1.5 leading-tight">{compatibility.bestReason}</p>
               </div>
-              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-3 text-center">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-4 text-center">
                 <p className="text-xs text-muted-foreground mb-1">WORST 궁합</p>
                 <p className="text-sm font-bold text-foreground leading-tight">{compatibility.worst}</p>
-                <p className="text-xs text-rose-500 mt-1 leading-tight">{compatibility.worstReason}</p>
+                <p className="text-xs text-rose-500 mt-1.5 leading-tight">{compatibility.worstReason}</p>
               </div>
             </div>
           </div>
 
           {/* Action Buttons - After Partner Guide */}
-          <div className="flex gap-3 mb-5 animate-fade-up delay-300">
+          <div className="flex gap-3 mb-6 animate-fade-up delay-300">
             <Button variant="meme" size="lg" className="flex-1" onClick={handleShare}>
               <Share2 className="w-5 h-5" />
               공유하기
@@ -351,34 +340,34 @@ const ResultPage = () => {
           </div>
           {/* PMS Scientific Evidence Section - Professional Dark Theme */}
           <div className="animate-fade-up delay-400">
-            <div className="bg-gradient-to-b from-[#2D1B4E] to-[#1E293B] rounded-t-2xl p-6 font-pretendard">
+            <div className={`bg-gradient-to-b from-[#2D1B4E] to-[#1E293B] px-5 pt-6 font-pretendard ${gender === 'female' ? 'rounded-t-2xl pb-0' : 'rounded-2xl pb-6'}`}>
               {/* Title */}
               <h3 className="text-xl font-bold text-center text-white mb-2 tracking-tight">
                 PMS가 갈수록 심해지는 기분
               </h3>
-              
-              <p className="text-center text-white/60 text-sm mb-6">
+
+              <p className="text-center text-white/60 text-sm mb-5">
                 혹시 느끼셨나요?
               </p>
 
               {/* Divider dots */}
-              <div className="flex justify-center gap-1 mb-6">
+              <div className="flex justify-center gap-1.5 mb-5">
                 <span className="w-1 h-1 bg-white/30 rounded-full"></span>
                 <span className="w-1 h-1 bg-white/30 rounded-full"></span>
                 <span className="w-1 h-1 bg-white/30 rounded-full"></span>
               </div>
 
               {/* SOS Signal */}
-              <p className="text-center font-bold text-[#C9A0FF] text-lg mb-4">
+              <p className="text-center font-bold text-[#C9A0FF] text-lg mb-3">
                 당신의 난소가 보내는 SOS 신호입니다.
               </p>
-              
-              <p className="text-sm text-white/80 leading-relaxed text-center mb-5">
+
+              <p className="text-sm text-white/80 leading-relaxed text-center mb-4">
                 우리 몸의 호르몬 공장인 난소가 지쳐갈수록, 유지되어야 할 호르몬 수치는 급락을 반복합니다. 이 '호르몬 롤러코스터'가 바로 당신을 PMS 기간에 빌런으로 만드는 진범이자, 반드시 관리해야 할 핵심 데이터입니다.
               </p>
 
               {/* Source */}
-              <p className="text-center text-xs text-white/40 italic">
+              <p className="text-center text-xs text-white/40 italic pb-4">
                 (Source: Penn Ovarian Aging Study & Harvard Medical School Joint Research)
               </p>
             </div>
@@ -396,6 +385,22 @@ const ResultPage = () => {
           </p>
         </div>
       </div>
+
+      {/* Share Bottom Sheet */}
+      <ShareBottomSheet
+        open={shareOpen}
+        onOpenChange={setShareOpen}
+        shareData={{
+          title: 'PMS 호르몬 유형 테스트',
+          text: `나의 PMS ${gender === 'female' ? '호르몬' : '대응'} 유형은 "${type.title}" ${type.emoji}\n\n나도 테스트하기 👇`,
+          url: window.location.origin,
+          typeTitle: type.title,
+          emoji: type.emoji,
+          nickname: nickname,
+          gender: gender,
+        }}
+        resultCardRef={resultCardRef}
+      />
     </AuraBackground>;
 };
 export default ResultPage;
