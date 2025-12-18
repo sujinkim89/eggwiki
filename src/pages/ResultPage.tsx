@@ -201,11 +201,22 @@ const ResultPage = () => {
               </span>
             </div>
 
-            {/* Sub description */}
+            {/* Reference Image & Sub description */}
             {type.hookLine.includes(' - ') && (
-              <p className="text-xs text-muted-foreground mt-2">
-                {type.hookLine.split(' - ')[1]}
-              </p>
+              <div className="mt-3">
+                {type.refImage && (
+                  <div className="mb-2">
+                    <img 
+                      src={type.refImage} 
+                      alt={type.hookLine.split(' - ')[1]}
+                      className="w-32 h-20 object-cover rounded-lg mx-auto shadow-md"
+                    />
+                  </div>
+                )}
+                <p className="text-xs text-muted-foreground">
+                  {type.hookLine.split(' - ')[1]}
+                </p>
+              </div>
             )}
           </div>
 

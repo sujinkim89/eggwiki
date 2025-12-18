@@ -236,6 +236,7 @@ export interface HormoneType {
   partnerTip: string;
   bestMatch: string;
   worstMatch: string;
+  refImage?: string;
   // Legacy fields for compatibility
   diagnosis: string;
   normalSelf: string;
@@ -257,6 +258,7 @@ export const femaleTypes: Record<string, HormoneType> = {
     partnerTip: '즉시 무릎을 꿇고 결론부터 3초 안에 보고하십시오. 변명은 사형입니다.',
     bestMatch: '메인로드 매니저, 원칙주의 현장감독',
     worstMatch: '슈퍼긍정 제작진, 눈물공감 소품팀',
+    refImage: '/type-refs/athena-miranda.png',
     diagnosis: '"결론이 뭔데?" 서론이 길면 영혼까지 탈곡해버리는 인간 작두입니다.',
     normalSelf: '혼돈의 전장을 정리하고 승리로 이끄는 압도적인 지략가이자 천부적인 리더입니다.',
     survivalTip: 'T와 코르티솔이 동시 폭주하여 뇌가 \'전시 상황\'입니다. 마그네슘과 테아닌으로 교감신경을 안정시키고 쿨다운 시간을 가지세요.',
