@@ -64,8 +64,8 @@ export const ResultCarousel = ({ type, nickname, gender }: ResultCarouselProps) 
               )}
               
               {/* Content */}
-              <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
-                {section.content}
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {section.content?.replace(/\n/g, ' ') || ''}
               </p>
             </div>
           ))}

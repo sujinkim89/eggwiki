@@ -75,20 +75,20 @@ export const BridgeSection = () => {
           {/* Main CTA Title */}
           <motion.div variants={itemVariants} className="text-center mb-8 font-pretendard">
             <h3 className="text-[26px] font-bold text-white mb-2 leading-tight tracking-tight font-pretendard">
-              여성 3대 호르몬<br />
-              <span className="text-[#4A7CFF]">바이오 데이터</span>로 관리하세요
+              <span className="text-white">지금부터 여성 3대 호르몬을</span><br />
+              과학적으로 관리하세요
             </h3>
           </motion.div>
 
           {/* 3 Major Hormones Engine */}
           <motion.div variants={itemVariants} className="mb-10">
-            <div className="text-center mb-6">
+            <div className="text-center mb-8 px-2">
               {/* Characters Image */}
-              <div className="mb-6 -mx-6">
+              <div className="mb-8 overflow-hidden rounded-xl">
                 <img
                   src={hormoneCharacters}
                   alt="AMH, FSH, E2 호르몬 캐릭터"
-                  className="w-full opacity-90"
+                  className="w-full opacity-90 scale-[1.02] -translate-y-[2%]"
                 />
               </div>
             </div>
@@ -158,9 +158,9 @@ export const BridgeSection = () => {
                 />
               </div>
               <p className="text-center text-white font-bold text-[15px] mb-4 tracking-tight">
-                전문의가 직접 운영하는 라보 여성 호르몬 3종 검사
+                전문의가 운영하는<br />여성호르몬 3종 검사
               </p>
-              <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-1 text-[11px] text-[#4A7CFF] font-medium">
+              <div className="flex flex-wrap justify-center items-center gap-x-3 gap-y-1 text-[11px] text-white font-medium">
                 <span>전문의 창업</span>
                 <span>•</span>
                 <span>전문의 자문</span>
@@ -171,12 +171,12 @@ export const BridgeSection = () => {
               </div>
             </div>
 
-            <div className="relative mb-8 -mx-6 flex justify-center">
+            <div className="relative mb-8 px-4 flex justify-center">
               <img 
                   src="/mockup.png"
                   alt="라보 앱 화면" 
-                  className="w-full"
-                  style={{ imageRendering: 'auto', WebkitBackfaceVisibility: 'hidden' }}
+                  className="w-full h-auto object-contain"
+                  style={{ mixBlendMode: 'normal' }}
                 />
             </div>
 
@@ -222,29 +222,29 @@ export const BridgeSection = () => {
             {/* Testimonials */}
             <div className="bg-[#2D3A4F] rounded-2xl p-5 mb-8 border border-slate-700/50 text-left">
               <p className="text-center text-white font-semibold text-[15px] mb-4 tracking-tight">
-                먼저 검사받은 분들의 이야기
+                먼저 검사받은 여성들의 이야기
               </p>
               <div className="space-y-3">
                 <div className="bg-[#1E293B] rounded-xl p-4 border border-slate-600/30">
                   <p className="text-slate-300 text-[13px] leading-relaxed mb-2">
-                    "AMH 수치 보고 솔직히 충격받았어요. 근데 오히려 마음이 편해졌어요. 
+                    "난소 나이가 30대 중반으로 나와서 솔직히 충격받았어요. 근데 오히려 마음이 편해졌어요. 
                     뭘 해야 할지 명확해지니까요."
                   </p>
                   <p className="text-slate-500 text-[11px]">— 32세, 직장인</p>
                 </div>
                 <div className="bg-[#1E293B] rounded-xl p-4 border border-slate-600/30">
                   <p className="text-slate-300 text-[13px] leading-relaxed mb-2">
-                    "FSH가 높게 나와서 난자 동결 바로 결정했어요. 
-                    6개월만 늦었어도 정말 후회했을 것 같아요."
+                    "완경에 가까워 지고 있어서, 난자 동결 바로 결정했어요. 
+                    늦게 알았으면 정말 후회했을 것 같아요."
                   </p>
-                  <p className="text-slate-500 text-[11px]">— 29세, 프리랜서</p>
+                  <p className="text-slate-500 text-[11px]">— 35세, 프리랜서</p>
                 </div>
                 <div className="bg-[#1E293B] rounded-xl p-4 border border-slate-600/30">
                   <p className="text-slate-300 text-[13px] leading-relaxed mb-2">
                     "PMS가 심한 게 제 탓이 아니었더라고요. 
-                    호르몬 관리 시작하고 진짜 인생이 달라졌어요."
+                    데이터로 보니까 파트너와 이야기할 때 이해받을 수 있었어요."
                   </p>
-                  <p className="text-slate-500 text-[11px]">— 35세, 마케터</p>
+                  <p className="text-slate-500 text-[11px]">— 27세, 마케터</p>
                 </div>
               </div>
             </div>
@@ -255,23 +255,7 @@ export const BridgeSection = () => {
               <p className="text-slate-300 text-[16px] mb-4 tracking-normal">가장 과학적인 첫걸음</p>
             </div>
 
-            {/* Sticky Bottom CTA */}
-            <div className="fixed bottom-0 left-0 right-0 p-4 z-50 bg-gradient-to-t from-[#1A1A2E] via-[#1A1A2E] to-transparent pb-8">
-              <div className="max-w-md mx-auto">
-                <a
-                  href="http://pf.kakao.com/_dlxkQn"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block shadow-xl rounded-xl"
-                >
-                  <Button 
-                    className="w-full bg-[#4A7CFF] hover:bg-[#3A6CEF] text-white font-bold py-7 rounded-xl text-[17px] tracking-tight shadow-lg shadow-blue-900/20 whitespace-pre-wrap leading-snug"
-                  >
-                    지금 집에서 라보 시작하고,{'\n'}30만원 난자냉동 지원금 받기
-                  </Button>
-                </a>
-              </div>
-            </div>
+            {/* Sticky Bottom CTA removed from here */}
           </motion.div>
 
         </motion.div>

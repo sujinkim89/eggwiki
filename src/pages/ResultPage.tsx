@@ -108,12 +108,9 @@ const ResultPage = () => {
       sub = teDominant;
     }
 
-    // Calculate percentiles - main should have lower (more rare) percentile
-    const mainPercentile = main === 'T' || main === 'E' 
-      ? calculateAdvancedPercentile(teDominantCount)
-      : calculateAdvancedPercentile(dsDominantCount);
-    
-    const subPercentile = 15; // User requested to unify sub percentile to 15%
+    // Calculate percentiles - fixed for all types
+    const mainPercentile = 3; // Fixed to 3% for all types
+    const subPercentile = 15; // Fixed to 15% for all types
 
     return { 
       main: { ...hormones[main], percentile: mainPercentile, desc: type.hormoneCoordinate?.mainDesc || hormones[main].desc }, 
@@ -165,7 +162,7 @@ const ResultPage = () => {
     navigate('/');
   };
   return <AuraBackground>
-      <div className="min-h-screen px-4 py-6">
+      <div className="min-h-screen px-4 py-6 pt-9">
         <div className="w-full max-w-md mx-auto">
           {/* Result Header - Hero Section (Screenshot-friendly) */}
           <div
@@ -219,7 +216,7 @@ const ResultPage = () => {
               {/* Villain Quote */}
               {type.quote && (
                 <div className="bg-gradient-to-r from-[#2D1B4E] to-[#1E293B] rounded-xl px-4 py-3">
-                  <p className="text-white text-sm font-medium italic leading-relaxed">
+                  <p className="text-white text-sm font-medium italic leading-relaxed whitespace-pre-line">
                     "{type.quote}"
                   </p>
                 </div>
@@ -349,7 +346,7 @@ const ResultPage = () => {
                     <p key={idx}>{match}</p>
                   ))}
                 </div>
-                <p className="text-xs text-rose-500 mt-auto leading-tight">{compatibility.worstReason}</p>
+                <p className="text-xs text-[#9D4EDD] mt-auto leading-tight">{compatibility.worstReason}</p>
               </div>
             </div>
           </div>
@@ -393,6 +390,27 @@ const ResultPage = () => {
         }}
         resultCardRef={resultCardRef}
       />
+
+      {/* Sticky Bottom CTA - Moved here to be visible immediately */}
+      <div className="fixed bottom-0 left-0 right-0 p-4 z-50 bg-gradient-to-t from-[#1A1A2E] via-[#1A1A2E] to-transparent pb-8">
+        <div className="max-w-md mx-auto">
+          <a
+            href="http://pf.kakao.com/_dlxkQn"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block shadow-xl rounded-xl"
+          >
+            <Button 
+              className="w-full bg-[#4A7CFF] hover:bg-[#3A6CEF] text-white font-bold py-7 rounded-xl text-[17px] tracking-tight shadow-lg shadow-blue-900/20 whitespace-pre-wrap leading-snug"
+            >
+              {gender === 'female' 
+                ? "지금 집에서 라보 시작하고,\n30만원 난자냉동 지원금 받기"
+                : "여자친구에게 라보 선물하고,\n30만원 난자냉동 지원금 받기"
+              }
+            </Button>
+          </a>
+        </div>
+      </div>
     </AuraBackground>;
 };
 export default ResultPage;
