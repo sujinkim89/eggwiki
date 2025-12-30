@@ -1,16 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import { AuraBackground } from "@/components/AuraBackground";
 import { Button } from "@/components/ui/button";
-// import villainMirror from "@/assets/villain-mirror.png";
 import mainImage from "/og-main.png";
 import { useQuizStore } from "@/store/quizStore";
 import { Zap } from "lucide-react";
+import { trackSelectGender } from "@/lib/analytics";
 
 const StartPage = () => {
   const navigate = useNavigate();
   const setGender = useQuizStore(state => state.setGender);
 
   const handleStart = (gender: 'female' | 'male') => {
+    trackSelectGender(gender);
     setGender(gender);
     navigate('/info');
   };
