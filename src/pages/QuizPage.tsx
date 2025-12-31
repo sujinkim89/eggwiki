@@ -7,6 +7,7 @@ import { Progress } from "@/components/ui/progress";
 import { useQuizStore } from "@/store/quizStore";
 import { femaleQuizQuestions, maleQuizQuestions, calculateType } from "@/data/quizData";
 import { ChevronLeft } from "lucide-react";
+import { trackQuizAnswer, trackQuizComplete } from "@/lib/analytics";
 
 const QuizPage = () => {
   const navigate = useNavigate();
@@ -33,12 +34,15 @@ const QuizPage = () => {
   }, [progress]);
 
   const handleAnswer = (type: string, index: number) => {
+    // Track quiz answer
+    trackQuizAnswer(currentQuestion + 1, type, gender || 'female');
     addAnswer(type, index);
 
     // Check if this was the last question
     if (currentQuestion === quizQuestions.length - 1) {
       const finalAnswers = [...answers, type];
       const resultType = calculateType(finalAnswers, gender || 'female');
+      trackQuizComplete(resultType, gender || 'female');
       setResultType(resultType);
       navigate('/analyzing');
     }

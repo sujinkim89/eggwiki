@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useQuizStore } from "@/store/quizStore";
 import { AlertTriangle, Sparkles, Heart, BookOpen, RefreshCw } from "lucide-react";
 import { getRandomNickname } from "@woowa-babble/random-nickname";
+import { trackNicknameGenerated, trackQuizStart } from "@/lib/analytics";
 
 const generateNickname = (): string => {
   const types = ['animals', 'heros', 'characters', 'monsters'] as const;
@@ -26,6 +27,7 @@ const InfoPage = () => {
   }, []);
 
   const handleRegenerate = () => {
+    trackNicknameGenerated();
     setIsSpinning(true);
     setNicknameState(generateNickname());
     setTimeout(() => setIsSpinning(false), 300);
@@ -33,6 +35,7 @@ const InfoPage = () => {
 
   const handleSubmit = () => {
     if (nickname.trim()) {
+      trackQuizStart(gender || 'female');
       setNickname(nickname.trim());
       navigate('/countdown');
     }

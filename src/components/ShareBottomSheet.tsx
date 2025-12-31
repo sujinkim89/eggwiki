@@ -5,9 +5,10 @@ import {
   DrawerHeader,
   DrawerTitle,
 } from "@/components/ui/drawer";
-import { Download, MoreHorizontal } from "lucide-react";
+import { Download } from "lucide-react";
 import { SiKakaotalk, SiX, SiInstagram } from "react-icons/si";
 import { toast } from "sonner";
+import { trackShare } from "@/lib/analytics";
 
 interface ShareBottomSheetProps {
   open: boolean;
@@ -65,6 +66,7 @@ export const ShareBottomSheet = ({
   // 링크 복사
   const handleCopyLink = async () => {
     try {
+      trackShare('copy_link', shareData.typeTitle, shareData.gender);
       await navigator.clipboard.writeText(shareData.url);
       toast.success("링크가 복사되었어요!");
       onOpenChange(false);
@@ -123,6 +125,7 @@ export const ShareBottomSheet = ({
 
   // 이미지 저장 (결과 카드 캡처)
   const handleSaveImage = async () => {
+    trackShare('save_image', shareData.typeTitle, shareData.gender);
     setIsCapturing(true);
     try {
       const blob = await captureImage();
@@ -148,6 +151,7 @@ export const ShareBottomSheet = ({
 
   // 인스타그램 스토리 공유 모듈
   const handleInstagramShare = async () => {
+    trackShare('instagram', shareData.typeTitle, shareData.gender);
     setIsCapturing(true);
     try {
       const blob = await captureImage();
@@ -199,6 +203,7 @@ export const ShareBottomSheet = ({
 
   // 카카오톡 공유 모듈
   const handleKakaoShare = () => {
+    trackShare('kakao', shareData.typeTitle, shareData.gender);
     try {
       if (window.Kakao && window.Kakao.isInitialized()) {
         window.Kakao.Share.sendDefault({
@@ -239,6 +244,7 @@ export const ShareBottomSheet = ({
 
   // 엑스(X) 공유 모듈
   const handleTwitterShare = () => {
+    trackShare('x', shareData.typeTitle, shareData.gender);
     try {
       const text = `${shareData.emoji} 나의 PMS ${shareData.gender === "female" ? "호르몬" : "대응"} 유형은 "${shareData.typeTitle}"!\n\n나도 테스트하기 👇`;
       const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(shareData.url)}`;

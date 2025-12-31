@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuraBackground } from "@/components/AuraBackground";
-import { EggCharacter } from "@/components/EggCharacter";
 import { Button } from "@/components/ui/button";
 import { TypeChart } from "@/components/TypeChart";
 import { ResultCarousel } from "@/components/ResultCarousel";
@@ -9,11 +8,10 @@ import { BridgeSection } from "@/components/BridgeSection";
 import { MaleBridgeSection } from "@/components/MaleBridgeSection";
 import { ShareBottomSheet } from "@/components/ShareBottomSheet";
 
-
 import { useQuizStore } from "@/store/quizStore";
 import { getTypeData, calculateCoordinates, maleTypes, femaleTypes } from "@/data/quizData";
 import { Share2, RotateCcw } from "lucide-react";
-import { toast } from "sonner";
+import { trackResultView, trackRestartQuiz, trackRhaboCTAClick, trackShareOpen, trackNicknameEdit } from "@/lib/analytics";
 const ResultPage = () => {
   const navigate = useNavigate();
   const [shareOpen, setShareOpen] = useState(false);
@@ -32,8 +30,11 @@ const ResultPage = () => {
   useEffect(() => {
     if (!resultType || !nickname) {
       navigate('/');
+    } else if (resultType && gender) {
+      // Track result view when page loads
+      trackResultView(resultType, gender);
     }
-  }, [resultType, nickname, navigate]);
+  }, [resultType, nickname, gender, navigate]);
 
   useEffect(() => {
     setLocalNickname(nickname);
@@ -47,6 +48,7 @@ const ResultPage = () => {
   }, [isEditingName]);
 
   const handleNameClick = () => {
+    trackNicknameEdit();
     setIsEditingName(true);
   };
 
@@ -215,11 +217,18 @@ const ResultPage = () => {
   };
 
   const handleShare = () => {
+    trackShareOpen(resultType || '');
     setShareOpen(true);
   };
+
   const handleRestart = () => {
+    trackRestartQuiz(resultType || '', gender || 'female');
     resetQuiz();
     navigate('/');
+  };
+
+  const handleRhaboCTAClick = () => {
+    trackRhaboCTAClick(gender || 'female', resultType || '');
   };
   return <AuraBackground>
       <div className="min-h-screen px-4 py-6 pt-9">
@@ -516,6 +525,7 @@ const ResultPage = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="block shadow-xl rounded-xl"
+            onClick={handleRhaboCTAClick}
           >
             <Button 
               className="w-full bg-[#4A7CFF] hover:bg-[#3A6CEF] text-white font-bold py-8 rounded-xl text-[20px] tracking-tight shadow-lg shadow-blue-900/20 whitespace-pre-wrap leading-tight"
