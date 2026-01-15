@@ -43,16 +43,6 @@ export const MaleBridgeSection = () => {
             여자들의 예민함이 이해가나요?
           </motion.h3>
 
-          {/* Highlight */}
-          <motion.div 
-            variants={itemVariants}
-            className="relative py-2 mb-6"
-          >
-            <p className="text-[18px] font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-200 leading-tight">
-              난소가 지쳐있으면,<br />매달 무너질 수밖에 없습니다.
-            </p>
-          </motion.div>
-
           {/* Scientific Proof Box */}
           <motion.div 
             variants={itemVariants}
@@ -90,8 +80,8 @@ export const MaleBridgeSection = () => {
                   alt="AMH, FSH, E2 호르몬 캐릭터"
                   className="w-full opacity-90 scale-[1.02] -translate-y-[2%]"
                 />
-              </div>
-            </div>
+        </div>
+      </div>
 
             <div className="space-y-4">
               {/* AMH */}
@@ -109,8 +99,8 @@ export const MaleBridgeSection = () => {
                 <p className="text-[13px] text-slate-400 leading-relaxed">
                   막연한 계획 대신, 데이터로 내 인생의 적기를 설계하세요.
                 </p>
-              </div>
-
+        </div>
+        
               {/* FSH */}
               <div className="bg-[#2D3A4F] rounded-xl p-5 border border-slate-700/50 text-left">
                 <div className="flex items-center gap-2 mb-3">
@@ -125,9 +115,9 @@ export const MaleBridgeSection = () => {
                 </p>
                 <p className="text-[13px] text-slate-400 leading-relaxed">
                   지금 난소가 과부하 상태인지, 안정적인지 확인하세요.
-                </p>
-              </div>
-              
+          </p>
+        </div>
+
               {/* E2 */}
               <div className="bg-[#2D3A4F] rounded-xl p-5 border border-slate-700/50 text-left">
                 <div className="flex items-center gap-2 mb-3">
@@ -142,9 +132,9 @@ export const MaleBridgeSection = () => {
                 </p>
                 <p className="text-[13px] text-slate-400 leading-relaxed">
                   생리 불순, 감정 기복의 원인을 수치로 확인하세요.
-                </p>
-              </div>
-            </div>
+          </p>
+        </div>
+      </div>
           </motion.div>
 
           {/* RHABO Intro */}
@@ -174,7 +164,7 @@ export const MaleBridgeSection = () => {
                   className="w-full h-auto object-contain"
                   style={{ mixBlendMode: 'normal' }}
                 />
-            </div>
+      </div>
 
             {/* Benefits Section */}
             <div className="bg-[#2D3A4F] rounded-2xl p-5 mb-4 border border-slate-700/50 text-left">
@@ -193,27 +183,27 @@ export const MaleBridgeSection = () => {
                   <span>
                     <span className="text-white font-medium">임신 계획</span>: 커리어와 출산 사이, 인생 시간표
                   </span>
-                </li>
+          </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-[#4A7CFF] mt-1.5 flex-shrink-0 text-[8px]">●</span>
                   <span>
                     <span className="text-white font-medium">완경기 예측</span>: 여성호르몬 엔진이 언제 멈추는지
                   </span>
-                </li>
+          </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-[#4A7CFF] mt-1.5 flex-shrink-0 text-[8px]">●</span>
                   <span>
                     <span className="text-white font-medium">에스트로겐</span>: 기분 기복과 피부 탄력 결정 수치
                   </span>
-                </li>
+          </li>
                 <li className="flex items-start gap-2.5">
                   <span className="text-[#4A7CFF] mt-1.5 flex-shrink-0 text-[8px]">●</span>
                   <span>
                     <span className="text-white font-medium">골밀도 체크</span>: 내 뼈를 지키는 호르몬이 적정한지?
                   </span>
-                </li>
-              </ul>
-            </div>
+          </li>
+        </ul>
+      </div>
 
             {/* Testimonials */}
             <div className="bg-[#2D3A4F] rounded-2xl p-5 mb-8 border border-slate-700/50 text-left">
@@ -227,23 +217,23 @@ export const MaleBridgeSection = () => {
                     뭘 해야 할지 명확해지니까요."
                   </p>
                   <p className="text-slate-500 text-[11px]">— 32세, 직장인</p>
-                </div>
+            </div>
                 <div className="bg-[#1E293B] rounded-xl p-4 border border-slate-600/30">
                   <p className="text-slate-300 text-[13px] leading-relaxed mb-2">
                     "완경에 가까워 지고 있어서, 난자 동결 바로 결정했어요. 
                     늦게 알았으면 정말 후회했을 것 같아요."
                   </p>
                   <p className="text-slate-500 text-[11px]">— 35세, 프리랜서</p>
-                </div>
+            </div>
                 <div className="bg-[#1E293B] rounded-xl p-4 border border-slate-600/30">
                   <p className="text-slate-300 text-[13px] leading-relaxed mb-2">
                     "PMS가 심한 게 제 탓이 아니었더라고요. 
                     데이터로 보니까 파트너와 이야기할 때 이해받을 수 있었어요."
                   </p>
                   <p className="text-slate-500 text-[11px]">— 27세, 마케터</p>
-                </div>
-              </div>
-            </div>
+          </div>
+        </div>
+      </div>
 
             {/* Final CTA */}
             <div className="bg-[#3B4A6B] rounded-2xl p-6 text-center mb-24">
@@ -259,9 +249,9 @@ export const MaleBridgeSection = () => {
                   className="w-full bg-[#4A7CFF] hover:bg-[#3A6CEF] text-white font-bold py-8 rounded-xl text-[20px] tracking-tight shadow-lg shadow-blue-900/20 whitespace-pre-wrap leading-tight"
                 >
                   진짜 호르몬 검사 선물하고{'\n'}30만원 지원금 받기
-                </Button>
+          </Button>
               </a>
-            </div>
+      </div>
 
             {/* Sticky Bottom CTA removed from here */}
           </motion.div>
