@@ -2,6 +2,8 @@ import { motion, Variants } from "framer-motion";
 import hormoneCharacters from "@/assets/hormone-characters-trio.png";
 import rhaboLogoSignature from "@/assets/rhabo-logo-signature.png";
 import { Button } from "@/components/ui/button";
+import EggBackground from "@/components/ui/egg-background";
+import { HeroGrid } from "@/components/ui/hero-grid-section";
 
 export const MaleBridgeSection = () => {
   const containerVariants: Variants = {
@@ -24,8 +26,9 @@ export const MaleBridgeSection = () => {
   };
 
   return (
-    <div className="w-full font-pretendard">
-      <div className="bg-gradient-to-b from-[#1A1A2E] to-[#1E293B] rounded-2xl p-6 pt-12 shadow-xl overflow-hidden relative">
+    <div className="w-full font-pretendard relative">
+      <EggBackground />
+      <div className="relative z-10 bg-gradient-to-b from-[#1A1A2E] to-[#1E293B] rounded-2xl p-6 pt-12 shadow-xl overflow-hidden">
         
         {/* --- PART 1: Scientific Evidence (Merged) --- */}
         <motion.div
@@ -33,56 +36,147 @@ export const MaleBridgeSection = () => {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={containerVariants}
-          className="text-center mb-8"
+          className="text-center mb-4"
         >
+          {/* Hero Grid Section - Purpose Message */}
+          <motion.div 
+            variants={itemVariants}
+            className="mb-0 -mx-6"
+          >
+            <HeroGrid
+              subtitleTop="에그위키 x RHABO 특별 이벤트"
+              title={
+                <>
+                  여성호르몬 검사<br />
+                  출산 계획있을 때만<br />
+                  하는 거 아니예요.
+                </>
+              }
+              subtitle="전세계 Z세대 여성들, 난자냉동으로 삶의 주도권 찾아"
+              primaryCtaText=""
+              secondaryCtaText=""
+              className="min-h-[400px]"
+            />
+          </motion.div>
+
+          {/* Event Banner */}
+          <motion.div 
+            variants={itemVariants}
+            className="mb-6 -mt-6"
+          >
+            <div className="bg-gradient-to-r from-blue-800/20 to-indigo-900/20 border-2 border-blue-600/50 rounded-xl p-5 relative overflow-hidden">
+              <div className="absolute top-3 right-3 bg-red-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full animate-pulse shadow-lg shadow-red-500/50 border border-red-400 z-10">
+                ⚠️ 조기 마감 임박
+              </div>
+              
+              {/* 지원금 정보 */}
+              <div className="flex items-center justify-center gap-2 mb-4 mt-12">
+                <span className="text-blue-400 text-2xl font-bold">💰</span>
+                <span className="text-white font-bold text-[18px]">난자 냉동 지원금 230만원</span>
+              </div>
+              <div className="text-[13px] text-slate-200 leading-relaxed space-y-1.5 mb-4">
+                <div className="flex items-center justify-center gap-2">
+                  <span className="text-blue-400 font-bold">✓</span>
+                  <span>서울시 지원금 200만원</span>
+                </div>
+                <div className="flex items-center justify-center gap-2">
+                  <span className="text-blue-400 font-bold">✓</span>
+                  <span>라보 추가 지원금 30만원</span>
+                </div>
+              </div>
+
+              {/* 지원 대상 및 조건 */}
+              <div className="bg-blue-900/30 rounded-lg p-4 mb-4 border border-blue-700/30">
+                <h4 className="text-white text-[12px] font-bold mb-3 text-center">지원 대상 및 조건</h4>
+                <div className="space-y-2 text-[11px] text-slate-300">
+                  <div className="flex items-start gap-2">
+                    <span className="text-blue-400 mt-0.5">📍</span>
+                    <span><span className="text-white font-semibold">거주:</span> 주민등록상 서울시 6개월 이상 거주</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-blue-400 mt-0.5">👤</span>
+                    <span><span className="text-white font-semibold">연령:</span> 만 20세~49세 여성 (생애 1회)</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 조기 마감 고급스러운 고지 */}
+              <div className="pt-3 border-t border-blue-600/30">
+                <div className="text-center space-y-1.5">
+                  <p className="text-[11px] text-blue-200 font-medium">
+                    본 사업은 <span className="text-white font-bold">최대 650명</span>에 한해 지원됩니다
+                  </p>
+                  <p className="text-[12px] text-blue-300 font-semibold">
+                    조기 마감이 예상되오니 서둘러 신청해주시기 바랍니다
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* CTA Button */}
+          <motion.div 
+            variants={itemVariants}
+            className="mb-2 px-4"
+          >
+            <a
+              href="http://pf.kakao.com/_dlxkQn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <Button
+                className="w-full bg-[#4A7CFF] hover:bg-[#3A6CEF] text-white font-bold py-7 sm:py-8 rounded-xl text-[18px] sm:text-[20px] tracking-[-0.01em] shadow-lg shadow-blue-900/20 leading-[1.3] cursor-pointer flex flex-col items-center justify-center gap-1"
+                onClick={() => {
+                  window.open("http://pf.kakao.com/_dlxkQn", "_blank");
+                }}
+              >
+                <span>플친 추가하고</span>
+                <span>230만원 지원금받기</span>
+              </Button>
+            </a>
+          </motion.div>
+
           {/* Headline */}
           <motion.h3 
             variants={itemVariants}
-            className="text-[24px] font-extrabold text-white tracking-[-0.02em] leading-tight mb-4 font-pretendard"
+            className="text-[24px] font-extrabold text-white tracking-[-0.02em] leading-tight mb-2 font-pretendard mt-4"
           >
             여자들의 예민함이 이해가나요?
           </motion.h3>
 
-          {/* Highlight */}
+          {/* Hero Section */}
           <motion.div 
             variants={itemVariants}
-            className="relative py-2 mb-6"
+            className="relative py-2 mb-1"
           >
-            <p className="text-[18px] font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-blue-200 leading-tight">
-              난소가 지쳐있으면,<br />매달 무너질 수밖에 없습니다.
-            </p>
-          </motion.div>
-
-          {/* Scientific Proof Box */}
-          <motion.div 
-            variants={itemVariants}
-            className="bg-white/5 border border-white/10 rounded-xl p-4 backdrop-blur-sm text-left mb-10"
-          >
-            <div className="flex items-center gap-2 mb-2">
-              <span className="w-1 h-3.5 bg-blue-500 rounded-full"></span>
-              <p className="text-[15px] font-bold text-blue-200">
-                하버드·펜실베니아 의대 공동 연구 증명
-              </p>
+            <div className="text-center space-y-4 px-2">
+              <h1 className="text-[17px] md:text-[21px] font-sans font-semibold text-blue-100 leading-[1.4] tracking-[-0.01em]">
+                난소가 지쳐있으면,<br />매달 무너질 수밖에 없습니다.
+              </h1>
             </div>
-            <p className="text-[15px] text-gray-200 leading-relaxed">
-              난소 에너지가 고갈되면 뇌와의 소통이 끊겨 호르몬이 폭주합니다. PMS 기간, 그녀의 멘탈이 의지와 상관없이 무너지는 의학적 이유입니다.
-            </p>
           </motion.div>
+        </motion.div>
 
-
-          {/* --- PART 2: CTA Bridge (Merged) --- */}
-          
+        {/* --- PART 2: CTA Bridge (Merged) --- */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={containerVariants}
+          className="text-center"
+        >
           {/* Main CTA Title */}
-          <motion.div variants={itemVariants} className="text-center mb-8 font-pretendard">
-            <h3 className="text-[26px] font-bold text-white mb-2 leading-tight tracking-tight font-pretendard">
+          <motion.div variants={itemVariants} className="text-center mb-3 font-pretendard px-2">
+            <h3 className="text-[17px] md:text-[21px] font-semibold text-white mb-1 leading-[1.4] tracking-[-0.01em] font-sans">
               <span className="text-white">지금부터 여성 3대 호르몬을</span><br />
               과학적으로 관리하세요
             </h3>
           </motion.div>
 
           {/* 3 Major Hormones Engine */}
-          <motion.div variants={itemVariants} className="mb-10">
-            <div className="text-center mb-8 px-2">
+          <motion.div variants={itemVariants} className="mb-3">
+            <div className="text-center mb-8 px-2 mt-2">
               {/* Characters Image */}
               <div className="mb-8 overflow-hidden rounded-xl">
                 <img
@@ -149,7 +243,7 @@ export const MaleBridgeSection = () => {
 
           {/* RHABO Intro */}
           <motion.div variants={itemVariants}>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 mb-8">
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-5 mb-6">
               <div className="flex justify-center mb-3">
                 <img
                   src={rhaboLogoSignature}
@@ -167,7 +261,7 @@ export const MaleBridgeSection = () => {
               </div>
             </div>
 
-            <div className="relative mb-8 px-4 flex justify-center">
+            <div className="relative mb-6 px-4 flex justify-center">
               <img 
                   src="/Mockup_final_png.png"
                   alt="라보 앱 화면" 
@@ -177,7 +271,7 @@ export const MaleBridgeSection = () => {
             </div>
 
             {/* Benefits Section */}
-            <div className="bg-[#2D3A4F] rounded-2xl p-5 mb-4 border border-slate-700/50 text-left">
+            <div className="bg-[#2D3A4F] rounded-2xl p-5 mb-6 border border-slate-700/50 text-left">
               <h4 className="text-white font-bold text-center mb-4 text-[15px] tracking-tight">
                 검사 후, 이런 것들이 명확해집니다
               </h4>
@@ -216,7 +310,7 @@ export const MaleBridgeSection = () => {
             </div>
 
             {/* Testimonials */}
-            <div className="bg-[#2D3A4F] rounded-2xl p-5 mb-8 border border-slate-700/50 text-left">
+            <div className="bg-[#2D3A4F] rounded-2xl p-5 mb-6 border border-slate-700/50 text-left">
               <p className="text-center text-white font-semibold text-[15px] mb-4 tracking-tight">
                 먼저 검사받은 여성들의 이야기
               </p>
@@ -246,9 +340,9 @@ export const MaleBridgeSection = () => {
             </div>
 
             {/* Final CTA */}
-            <div className="bg-[#3B4A6B] rounded-2xl p-6 text-center mb-24">
-              <p className="text-white text-[20px] font-bold tracking-tight mb-1">그녀를 위한 가장 특별한 선물</p>
-              <p className="text-slate-300 text-[16px] mb-6 tracking-normal">여자의 몸의 주도권을 찾아주세요</p>
+            <div className="bg-[#3B4A6B] rounded-2xl p-4 text-center mb-6">
+              <p className="text-white text-[16px] font-bold tracking-tight mb-1">그녀를 위한 가장 특별한 선물</p>
+              <p className="text-slate-300 text-[16px] mb-4 tracking-normal">여자의 몸의 주도권을 찾아주세요</p>
               <a
                 href="http://pf.kakao.com/_dlxkQn"
                 target="_blank"
@@ -256,17 +350,18 @@ export const MaleBridgeSection = () => {
                 className="block"
               >
                 <Button 
-                  className="w-full bg-[#4A7CFF] hover:bg-[#3A6CEF] text-white font-bold py-8 rounded-xl text-[20px] tracking-tight shadow-lg shadow-blue-900/20 whitespace-pre-wrap leading-tight"
+                  className="w-full bg-[#4A7CFF] hover:bg-[#3A6CEF] text-white font-bold py-8 rounded-xl text-[20px] tracking-tight shadow-lg shadow-blue-900/20 leading-tight flex flex-col items-center justify-center gap-1"
                 >
-                  진짜 호르몬 검사 선물하고{'\n'}30만원 지원금 받기
+                  <span>플친 추가하고</span>
+                  <span>230만원 지원금받기</span>
                 </Button>
               </a>
             </div>
 
             {/* Sticky Bottom CTA removed from here */}
           </motion.div>
-
         </motion.div>
+
       </div>
     </div>
   );
