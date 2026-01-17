@@ -70,7 +70,7 @@ export function HeroGrid({
                       quote: "이제 난자 동결은 30대 여성만의 이야기가 아닙니다. 영국 통계청에 따르면 18~24세 여성의 난자 동결 시술은 4년간 46% 증가했고, 링크드인에는 20대 커리어우먼들이 자신의 선택을 당당히 공유하고 있습니다.",
                       name: "난자냉동 3040 전유물?",
                       designation: "20대 중심으로 급격히 증가",
-                      src: "/eggfreezing/2.jpeg",
+                      src: "/eggfreezing/front-view-smiley-woman-outdoors_52683-99864.avif",
                     },
                     {
                       quote: "더 많은 여성들이 몸과 시간의 주도권을 되찾는 선택을 하고 있어요. 아이를 포기한 것이 아니라, 삶의 속도를 스스로 선택하기 위해서였죠. 그 시작은 바로 나의 난소나이를 알고, 3대 여성호르몬을 체계적으로 분석하는 겁니다.",
@@ -86,7 +86,7 @@ export function HeroGrid({
             )}
             
             {primaryCtaText && subtitle && (
-              <div className="mt-8 px-4">
+              <div className="mt-[34px] mb-[2px] px-4">
                 <a
                   href="http://pf.kakao.com/_dlxkQn"
                   target="_blank"
