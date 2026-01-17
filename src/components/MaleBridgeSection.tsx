@@ -131,8 +131,8 @@ export const MaleBridgeSection = () => {
                   window.open("http://pf.kakao.com/_dlxkQn", "_blank");
                 }}
               >
-                <span>플친 추가하고</span>
-                <span>230만원 지원금받기</span>
+                <span>카톡 플친 추가하고</span>
+                <span>230만원 지원금 받기</span>
               </Button>
             </a>
           </motion.div>
@@ -352,8 +352,8 @@ export const MaleBridgeSection = () => {
                 <Button 
                   className="w-full bg-[#4A7CFF] hover:bg-[#3A6CEF] text-white font-bold py-8 rounded-xl text-[20px] tracking-tight shadow-lg shadow-blue-900/20 leading-tight flex flex-col items-center justify-center gap-1"
                 >
-                  <span>플친 추가하고</span>
-                  <span>230만원 지원금받기</span>
+                  <span>카톡 플친 추가하고</span>
+                  <span>230만원 지원금 받기</span>
                 </Button>
               </a>
             </div>

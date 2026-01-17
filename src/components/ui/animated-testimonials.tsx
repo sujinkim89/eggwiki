@@ -47,12 +47,12 @@ export const AnimatedTestimonials = ({
   };
 
   return (
-    <div className={cn("max-w-sm md:max-w-2xl mx-auto px-4 md:px-8 lg:px-12 py-20", className)}>
-      {/* 슬라이드 기능 유지, PC에서도 1단 레이아웃 - md:grid-cols-2 제거 */}
+    <div className={cn("max-w-sm md:max-w-lg lg:max-w-xl mx-auto px-4 py-20", className)}>
+      {/* 슬라이드 기능 유지, PC에서도 1단 레이아웃 - 모바일과 동일한 간격 유지 */}
       <div className="relative grid grid-cols-1 gap-6 items-center">
         {/* 이미지 슬라이드 섹션 */}
-        <div>
-          <div className="relative h-80 w-full">
+        <div className="w-full max-w-md mx-auto">
+          <div className="relative h-80 md:h-96 w-full">
             <AnimatePresence>
               {testimonials.map((testimonial, index) => (
                 <motion.div
@@ -113,7 +113,7 @@ export const AnimatedTestimonials = ({
         </div>
         
         {/* 텍스트 섹션 */}
-        <div className="flex justify-between flex-col py-4">
+        <div className="flex justify-between flex-col py-4 w-full">
           <motion.div
             key={active}
             initial={{
@@ -132,16 +132,17 @@ export const AnimatedTestimonials = ({
               duration: 0.2,
               ease: "easeInOut",
             }}
+            className="w-full"
           >
-            <div className="flex flex-col" style={{ gap: '2px' }}>
-              <h3 className="text-[22px] md:text-[26px] lg:text-[30px] font-bold text-white font-sans">
+            <div className="flex flex-col mb-4" style={{ gap: '2px' }}>
+              <h3 className="text-[22px] md:text-[24px] lg:text-[26px] font-bold text-white font-sans break-keep">
                 {testimonials[active].name}
               </h3>
-              <p className="text-[22px] md:text-[26px] lg:text-[30px] font-bold text-white font-sans">
+              <p className="text-[22px] md:text-[24px] lg:text-[26px] font-bold text-white font-sans break-keep">
                 {testimonials[active].designation}
               </p>
             </div>
-            <motion.p className="text-sm text-slate-100 mt-8 leading-relaxed font-sans">
+            <motion.p className="text-sm md:text-[15px] lg:text-base text-slate-100 mt-6 md:mt-8 leading-relaxed font-sans break-keep hyphens-none whitespace-normal max-w-full px-2">
               {testimonials[active].quote.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
